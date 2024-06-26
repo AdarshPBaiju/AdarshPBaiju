@@ -26,19 +26,19 @@ Welcome to my portfolio! Here you can find a collection of my projects, skills, 
 - **Description**: Created a full-stack multi-user TODO application with CRUD functionality.
 - **Technologies**: Django, SQLite, HTML, CSS, JavaScript
 
-### [Hospital Appointment Booking]
+### Hospital Appointment Booking
 - **Description**: Efficiently scheduled and managed hospital appointments with a user-friendly web platform.
 - **Technologies**: Django, SQLite, HTML, CSS, JavaScript
 
-### [Puzzle Game Using JavaScript]
+### Puzzle Game Using JavaScript
 - **Description**: Enhanced user engagement by developing a puzzle game with interactive features.
 - **Technologies**: JavaScript, HTML, CSS
 
-### [DDoS Detection]
+### DDoS Detection
 - **Description**: Achieved 95% accuracy in DDoS detection using KNN and Naïve Bayes algorithms.
 - **Technologies**: Python, KNN, Naïve Bayes
 
-### [Multi User Portfolio Website]
+### Multi-User Portfolio Website
 - **Description**: Created and launched a multi-user portfolio website using PHP Laravel.
 - **Technologies**: PHP, Laravel, HTML, CSS, JavaScript
 
