@@ -1,4 +1,4 @@
-# Adarsh P. Baiju's Portfolio
+# Adarsh P Baiju's Portfolio
 
 Welcome to my portfolio! Here you can find a collection of my projects, skills, and achievements.
 
@@ -67,4 +67,4 @@ Welcome to my portfolio! Here you can find a collection of my projects, skills, 
 ## Contact
 💞️ I’m looking to collaborate on Web Backend Development. Feel free to reach out to me:
 - **Email**: [adarshpbaiju2060@gmail.com](mailto:adarshpbaiju2060@gmail.com)
-- **LinkedIn**: [Adarsh P. Baiju](https://www.linkedin.com/in/adarsh-p-baiju/)
+- **LinkedIn**: [Adarsh P Baiju](https://www.linkedin.com/in/adarsh-p-baiju/)
