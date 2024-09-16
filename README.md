@@ -14,7 +14,7 @@ Welcome to my portfolio! Here you can find a collection of my projects, skills, 
 
 ## Projects
 
-### [E-Commerce Website with PayPal and Razorpay Integration](https://ecomm-riode.onrender.com/)
+### [E-Commerce Website with PayPal and Razorpay Integration](https://riode-ecomm.adarshpbaiju.info/)
 - **Description**: Spearheaded the creation of a dynamic Django-powered eCommerce platform with advanced payment integration, user authentication, and real-time notifications.
 - **Technologies**: Django, PostgreSQL, PayPal, Razorpay, HTML, CSS, JavaScript
 
