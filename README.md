@@ -5,14 +5,25 @@ Welcome to my portfolio! Here you can find a collection of my projects, skills, 
 ## About Me
 👋 Hi, I’m @AdarshPBaiju. I am a Python Developer with experience in building scalable web applications using Python, Django, Django REST Framework, and Flask. I am passionate about web development and constantly learning new technologies to improve my skills.
 
-## Skills
+## 🔧 Technologies & Tools
 - **Programming Languages**: Python, JavaScript, C++
-- **Frameworks**: Django, Django REST Framework, Flask, Bootstrap
-- **Databases**: MongoDB, SQLite, MySQL, PostgreSQL
-- **Tools**: Git, Docker, APIs
-- **Web Technologies**: HTML, CSS, JavaScript
+- **Backend Development:**: Django, Django Rest Framework, Celery, Redis
+- **Frontend Development:**: ReactJS, JavaScript
+- **Others:**: Web Scraping, Caching, Redis, Celery, Docker
 
-## Projects
+## 💼 Work Experience
+
+**Junior Python Developer** at Yafei AI Technologies
+- Tech stack: Django, ReactJS
+- 
+  
+**Python Developer Intern** at Techwingsys
+- Accumulated hands-on experience in back-end development, specializing in Python and Django frameworks.
+- Developed and delivered multiple backend applications, demonstrating proficiency in project management and execution.
+- Enhanced user experience by integrating third-party APIs, including payment and authentication systems.
+
+  
+## 🚀 Projects & Contributions
 
 ### [E-Commerce Website with PayPal and Razorpay Integration](https://riode-ecomm.adarshpbaiju.info/)
 - **Description**: Spearheaded the creation of a dynamic Django-powered eCommerce platform with advanced payment integration, user authentication, and real-time notifications.
@@ -42,12 +53,6 @@ Welcome to my portfolio! Here you can find a collection of my projects, skills, 
 - **Description**: Created and launched a multi-user portfolio website using PHP Laravel.
 - **Technologies**: PHP, Laravel, HTML, CSS, JavaScript
 
-## Experience
-
-**Python Developer Intern** at Techwingsys
-- Accumulated hands-on experience in back-end development, specializing in Python and Django frameworks.
-- Developed and delivered multiple backend applications, demonstrating proficiency in project management and execution.
-- Enhanced user experience by integrating third-party APIs, including payment and authentication systems.
 
 ## Education
 
@@ -64,7 +69,7 @@ Welcome to my portfolio! Here you can find a collection of my projects, skills, 
 - **Team Collaboration**: Proven ability to enhance teamwork and collaboration skills in fast-paced environments.
 - **Technical Proficiency**: Demonstrated proficiency in Python, Django, and other related web development technologies.
 
-## Contact
+## 🌐 Connect with Me
 💞️ I’m looking to collaborate on Web Backend Development. Feel free to reach out to me:
 - **Email**: [adarshpbaiju2060@gmail.com](mailto:adarshpbaiju2060@gmail.com)
 - **LinkedIn**: [Adarsh P Baiju](https://www.linkedin.com/in/adarsh-p-baiju/)
