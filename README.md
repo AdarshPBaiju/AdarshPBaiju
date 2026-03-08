@@ -111,15 +111,7 @@ https://github.com/AdarshPBaiju/todo-app
 ## 📊 GitHub Stats
 
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=AdarshPBaiju&show_icons=true&theme=tokyonight"/>
-</p>
-
-<p align="center">
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=AdarshPBaiju&theme=tokyonight"/>
-</p>
-
-<p align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AdarshPBaiju&layout=compact&theme=tokyonight"/>
+  ![Stats](https://github-readme-stats.vercel.app/api?username=AdarshPBaiju&theme=synthwave&show_icons=true)
 </p>
 
 ---
