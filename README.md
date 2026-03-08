@@ -1,75 +1,143 @@
-# Adarsh P Baiju's Portfolio
+<h1 align="center">Hi 👋, I'm Adarsh P Baiju</h1>
+<h3 align="center">Python Backend Developer | Django & REST API Specialist</h3>
 
-Welcome to my portfolio! Here you can find a collection of my projects, skills, and achievements.
+<p align="center">
+Building scalable web applications using Python, Django, and modern web technologies.
+</p>
 
-## About Me
-👋 Hi, I’m @AdarshPBaiju. I am a Python Developer with experience in building scalable web applications using Python, Django, Django REST Framework, and Flask. I am passionate about web development and constantly learning new technologies to improve my skills.
+---
 
-## 🔧 Technologies & Tools
-- **Programming Languages**: Python, JavaScript, C++
-- **Backend Development:**: Django, Django Rest Framework, Celery, Redis
-- **Frontend Development:**: ReactJS, JavaScript
-- **Others:**: Web Scraping, Caching, Redis, Celery, Docker
+## 👨‍💻 About Me
 
-## 💼 Work Experience
+- 🔭 I’m currently working on **Python & Django based web applications**
+- 🌱 I’m currently learning **Advanced System Design, Distributed Systems, and Microservices**
+- 💬 Ask me about **Python, Django, REST APIs, Celery, Redis, and Backend Architecture**
+- 📫 How to reach me: **adarshpbaiju@outlook.com**
 
-**Junior Python Developer** at Yafei AI Technologies
-- Tech stack: Django, ReactJS
-- 
-  
-**Python Developer Intern** at Techwingsys
-- Accumulated hands-on experience in back-end development, specializing in Python and Django frameworks.
-- Developed and delivered multiple backend applications, demonstrating proficiency in project management and execution.
-- Enhanced user experience by integrating third-party APIs, including payment and authentication systems.
+---
 
-  
-## 🚀 Projects & Contributions
+## 🚀 Tech Stack
 
-### [E-Commerce Website with PayPal and Razorpay Integration](https://riode-ecomm.adarshpbaiju.info/)
-- **Description**: Spearheaded the creation of a dynamic Django-powered eCommerce platform with advanced payment integration, user authentication, and real-time notifications.
-- **Technologies**: Django, PostgreSQL, PayPal, Razorpay, HTML, CSS, JavaScript
+### Languages
+- Python
+- JavaScript
+- C++
 
-### [URL Shortener](https://shorturl-ibm9.onrender.com/)
-- **Description**: Developed a URL shortener web application with features such as custom short URL generation, redirection, and analytics tracking.
-- **Technologies**: Django, MySQL, HTML, CSS, JavaScript
+### Backend
+- Django
+- Django REST Framework
+- Flask
+- Celery
+- Redis
 
-### [TO DO App](https://todo-nety.onrender.com/)
-- **Description**: Created a full-stack multi-user TODO application with CRUD functionality.
-- **Technologies**: Django, SQLite, HTML, CSS, JavaScript
+### Frontend
+- ReactJS
+- HTML
+- CSS
+- SCSS
 
-### Hospital Appointment Booking
-- **Description**: Efficiently scheduled and managed hospital appointments with a user-friendly web platform.
-- **Technologies**: Django, SQLite, HTML, CSS, JavaScript
+### Tools & DevOps
+- Docker
+- Git
+- PostgreSQL
+- Linux
 
-### Puzzle Game Using JavaScript
-- **Description**: Enhanced user engagement by developing a puzzle game with interactive features.
-- **Technologies**: JavaScript, HTML, CSS
+---
 
-### DDoS Detection
-- **Description**: Achieved 95% accuracy in DDoS detection using KNN and Naïve Bayes algorithms.
-- **Technologies**: Python, KNN, Naïve Bayes
+## 📌 Featured Projects
 
-### Multi-User Portfolio Website
-- **Description**: Created and launched a multi-user portfolio website using PHP Laravel.
-- **Technologies**: PHP, Laravel, HTML, CSS, JavaScript
+### 🛒 Ecommerce Platform
+Full-featured eCommerce web application built with Django.
 
+**Features**
+- User authentication
+- Product catalog with categories and brands
+- Shopping cart system
+- Order management
+- Payment gateway integration
+- Email and SMS notifications
 
-## Education
+**Tech Stack**
+- Django
+- PostgreSQL
+- Redis
+- Twilio
 
-**Bachelor of Technology in Computer Science**
-- Mangalam College of Engineering, Ettumanoor (2019 - 2023)
+Repository:
+https://github.com/AdarshPBaiju/Ecommerce-with-payment
 
-## Certificates
-- **Web Development Training** - Certificate of Completion from Internshala Training
-- **Certificate Course in C++ Programming** - Intermediate
+---
 
-## Strengths
-- **Adaptability**: Quickly adapting to new technologies and environments for efficient work performance.
-- **Problem-Solving**: Strong problem-solving skills to tackle complex challenges in web development projects.
-- **Team Collaboration**: Proven ability to enhance teamwork and collaboration skills in fast-paced environments.
-- **Technical Proficiency**: Demonstrated proficiency in Python, Django, and other related web development technologies.
+### 💼 Job Portal
+A job portal platform where companies can post jobs and users can apply.
 
-## 🌐 Connect with Me
-💞️ I’m looking to collaborate on Web Backend Development. Feel free to reach out to me:
-- **Email**: [adarshpbaiju2060@gmail.com](mailto:adarshpbaiju2060@gmail.com)
-- **LinkedIn**: [Adarsh P Baiju](https://www.linkedin.com/in/adarsh-p-baiju/)
+**Features**
+- Job listing
+- Employer dashboard
+- Candidate applications
+- Authentication system
+
+Repository:
+https://github.com/AdarshPBaiju/job-portal
+
+---
+
+### 🔗 URL Shortener
+A Django-based URL shortener application.
+
+**Features**
+- Generate short URLs
+- Redirect system
+- Basic analytics
+
+Repository:
+https://github.com/AdarshPBaiju/url-shortener
+
+---
+
+### ✅ Todo Application
+A task management web application.
+
+**Features**
+- Task creation
+- Update and delete tasks
+- User authentication
+
+Repository:
+https://github.com/AdarshPBaiju/todo-app
+
+---
+
+## 📊 GitHub Stats
+
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=AdarshPBaiju&show_icons=true&theme=tokyonight"/>
+</p>
+
+<p align="center">
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=AdarshPBaiju&theme=tokyonight"/>
+</p>
+
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AdarshPBaiju&layout=compact&theme=tokyonight"/>
+</p>
+
+---
+
+## 📈 What I'm Working Toward
+
+- Building **production-grade backend systems**
+- Learning **system design and scalable architecture**
+- Contributing to **open-source projects**
+- Improving **code quality, testing, and CI/CD pipelines**
+
+---
+
+## 🤝 Connect With Me
+
+- GitHub: https://github.com/AdarshPBaiju
+- LinkedIn: https://linkedin.com/in/adarsh-p-baiju
+
+---
+
+⭐ If you like my work, consider giving a star to my repositories!
