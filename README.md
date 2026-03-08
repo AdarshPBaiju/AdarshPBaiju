@@ -108,14 +108,6 @@ https://github.com/AdarshPBaiju/todo-app
 
 ---
 
-## 📊 GitHub Stats
-
-<p align="center">
-  ![Stats](https://github-readme-stats.vercel.app/api?username=AdarshPBaiju&theme=synthwave&show_icons=true)
-</p>
-
----
-
 ## 📈 What I'm Working Toward
 
 - Building **production-grade backend systems**
