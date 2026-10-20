@@ -373,14 +373,14 @@ for (const [slug, label] of [
   ["linkedin", "LinkedIn ↗"],
   ["github", "GitHub ↗"],
 ]) {
-  const width = slug === "email" ? 600 : 300;
+  const width = slug === "email" ? 408 : 396;
   await save(
-    `link-${slug}`,
+    `footer-${slug}-v2`,
     svg(
       width,
       90,
       label,
-      `${rect(12, 12, width - 24, 66, C.panel, 8)}${text(width / 2, 54, label, 20, C.lime, 'text-anchor="middle"')}`,
+      `${rect(12, 12, width - 24, 66, C.panel, 8)}${text(width / 2, 54, label, slug === "email" ? 16 : 18, C.lime, 'text-anchor="middle"')}`,
     ),
   );
 }
