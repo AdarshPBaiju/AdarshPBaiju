@@ -1,6 +1,6 @@
 {
   "username": "AdarshPBaiju",
-  "fetchedAt": "2026-10-20T13:52:19.494Z",
+  "fetchedAt": "2026-10-20T13:56:29.760Z",
   "followers": 6,
   "publicRepos": 18,
   "stars": 3,
@@ -16,7 +16,7 @@
     ],
     [
       "JavaScript",
-      2
+      3
     ],
     [
       "SCSS",
@@ -60,8 +60,8 @@
       "name": "AdarshPBaiju",
       "stars": 1,
       "forks": 0,
-      "language": null,
-      "updatedAt": "2026-10-20T10:15:01Z",
+      "language": "JavaScript",
+      "updatedAt": "2026-10-20T13:56:07Z",
       "url": "https://github.com/AdarshPBaiju/AdarshPBaiju"
     },
     {
