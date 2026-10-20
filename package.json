@@ -1,0 +1,16 @@
+{
+  "name": "adarsh-github-profile",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Custom GitHub profile assets and a first-party public activity dashboard.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "refresh": "node scripts/refresh.mjs && node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test scripts/profile.test.mjs"
+  }
+}

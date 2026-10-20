@@ -1,0 +1,188 @@
+{
+  "username": "AdarshPBaiju",
+  "fetchedAt": "2026-10-20T13:52:19.494Z",
+  "followers": 6,
+  "publicRepos": 18,
+  "stars": 3,
+  "forks": 0,
+  "languages": [
+    [
+      "Python",
+      6
+    ],
+    [
+      "TypeScript",
+      5
+    ],
+    [
+      "JavaScript",
+      2
+    ],
+    [
+      "SCSS",
+      1
+    ],
+    [
+      "HTML",
+      1
+    ],
+    [
+      "CSS",
+      1
+    ]
+  ],
+  "activity": {
+    "total": 2,
+    "days": {
+      "2026-10-20": 2
+    },
+    "windowDays": 90,
+    "metric": "latest-repository-push"
+  },
+  "repositories": [
+    {
+      "name": "3dmodelReact",
+      "stars": 0,
+      "forks": 0,
+      "language": "JavaScript",
+      "updatedAt": "2024-10-24T07:12:01Z",
+      "url": "https://github.com/AdarshPBaiju/3dmodelReact"
+    },
+    {
+      "name": "adarsh-portfolio",
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "updatedAt": "2026-10-20T13:42:23Z",
+      "url": "https://github.com/AdarshPBaiju/adarsh-portfolio"
+    },
+    {
+      "name": "AdarshPBaiju",
+      "stars": 1,
+      "forks": 0,
+      "language": null,
+      "updatedAt": "2026-10-20T10:15:01Z",
+      "url": "https://github.com/AdarshPBaiju/AdarshPBaiju"
+    },
+    {
+      "name": "chatapp",
+      "stars": 1,
+      "forks": 0,
+      "language": "Python",
+      "updatedAt": "2026-05-09T07:06:33Z",
+      "url": "https://github.com/AdarshPBaiju/chatapp"
+    },
+    {
+      "name": "chat_app",
+      "stars": 0,
+      "forks": 0,
+      "language": null,
+      "updatedAt": "2024-12-26T08:49:58Z",
+      "url": "https://github.com/AdarshPBaiju/chat_app"
+    },
+    {
+      "name": "chronoflow",
+      "stars": 1,
+      "forks": 0,
+      "language": "TypeScript",
+      "updatedAt": "2026-06-25T03:46:33Z",
+      "url": "https://github.com/AdarshPBaiju/chronoflow"
+    },
+    {
+      "name": "Ecommerce-with-payment",
+      "stars": 0,
+      "forks": 0,
+      "language": "SCSS",
+      "updatedAt": "2024-06-02T12:50:43Z",
+      "url": "https://github.com/AdarshPBaiju/Ecommerce-with-payment"
+    },
+    {
+      "name": "GSAP-Workshop",
+      "stars": 0,
+      "forks": 0,
+      "language": "JavaScript",
+      "updatedAt": "2024-10-25T11:04:04Z",
+      "url": "https://github.com/AdarshPBaiju/GSAP-Workshop"
+    },
+    {
+      "name": "hospital_management",
+      "stars": 0,
+      "forks": 0,
+      "language": "Python",
+      "updatedAt": "2024-05-29T12:22:42Z",
+      "url": "https://github.com/AdarshPBaiju/hospital_management"
+    },
+    {
+      "name": "ImageSlider",
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "updatedAt": "2024-10-23T05:55:10Z",
+      "url": "https://github.com/AdarshPBaiju/ImageSlider"
+    },
+    {
+      "name": "interior",
+      "stars": 0,
+      "forks": 0,
+      "language": "HTML",
+      "updatedAt": "2024-09-09T11:55:34Z",
+      "url": "https://github.com/AdarshPBaiju/interior"
+    },
+    {
+      "name": "job-portal",
+      "stars": 0,
+      "forks": 0,
+      "language": "Python",
+      "updatedAt": "2024-08-10T10:25:21Z",
+      "url": "https://github.com/AdarshPBaiju/job-portal"
+    },
+    {
+      "name": "my-test-app",
+      "stars": 0,
+      "forks": 0,
+      "language": "Python",
+      "updatedAt": "2024-06-17T13:00:14Z",
+      "url": "https://github.com/AdarshPBaiju/my-test-app"
+    },
+    {
+      "name": "NoteApp-React",
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "updatedAt": "2024-10-25T05:32:59Z",
+      "url": "https://github.com/AdarshPBaiju/NoteApp-React"
+    },
+    {
+      "name": "toastdemo",
+      "stars": 0,
+      "forks": 0,
+      "language": "CSS",
+      "updatedAt": "2025-03-13T06:54:47Z",
+      "url": "https://github.com/AdarshPBaiju/toastdemo"
+    },
+    {
+      "name": "todo",
+      "stars": 0,
+      "forks": 0,
+      "language": "Python",
+      "updatedAt": "2024-05-29T06:41:19Z",
+      "url": "https://github.com/AdarshPBaiju/todo"
+    },
+    {
+      "name": "todo-react",
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "updatedAt": "2024-10-24T14:49:34Z",
+      "url": "https://github.com/AdarshPBaiju/todo-react"
+    },
+    {
+      "name": "URL-SHORTNER",
+      "stars": 0,
+      "forks": 0,
+      "language": "Python",
+      "updatedAt": "2024-06-02T16:09:42Z",
+      "url": "https://github.com/AdarshPBaiju/URL-SHORTNER"
+    }
+  ]
+}

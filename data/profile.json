@@ -1,0 +1,53 @@
+{
+  "username": "AdarshPBaiju",
+  "name": "Adarsh P Baiju",
+  "role": "Python Backend Developer",
+  "location": "Kerala, India",
+  "email": "adarshpbaiju@outlook.com",
+  "linkedin": "https://linkedin.com/in/adarsh-p-baiju",
+  "tagline": "Django, REST APIs and PostgreSQL.",
+  "projects": [
+    {
+      "repo": "chronoflow",
+      "title": "ChronoFlow",
+      "description": "Projects, workflow columns and timed task sessions,",
+      "detail": "with notes, analytics and reports.",
+      "tags": "DJANGO REST / REACT / TYPESCRIPT"
+    },
+    {
+      "repo": "Ecommerce-with-payment",
+      "title": "Ecommerce Platform",
+      "description": "Product discovery, shopping carts and payments,",
+      "detail": "with order management and notifications.",
+      "tags": "DJANGO / POSTGRESQL / REDIS"
+    },
+    {
+      "repo": "job-portal",
+      "title": "Job Portal",
+      "description": "Connecting employer job listings with candidates,",
+      "detail": "applications and authenticated dashboards.",
+      "tags": "OPPORTUNITIES / APPLICATIONS"
+    },
+    {
+      "repo": "hospital_management",
+      "title": "Hospital Management",
+      "description": "Online patient bookings, doctor listings,",
+      "detail": "specialties and hospital departments.",
+      "tags": "PYTHON / DJANGO / APPOINTMENTS"
+    },
+    {
+      "repo": "URL-SHORTNER",
+      "title": "URL Shortener",
+      "description": "Short links, redirect handling and basic analytics.",
+      "detail": "Short URL generation and redirect analytics.",
+      "tags": "DJANGO / REDIRECTS / ANALYTICS"
+    },
+    {
+      "repo": "todo-react",
+      "title": "Todo PWA",
+      "description": "A React task manager with PWA integration,",
+      "detail": "date controls and a responsive interface.",
+      "tags": "REACT / TYPESCRIPT / PWA"
+    }
+  ]
+}
