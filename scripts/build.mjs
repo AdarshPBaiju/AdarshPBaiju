@@ -22,7 +22,7 @@ const rect = (x, y, w, h, fill = C.panel, rx = 12, extra = "") =>
 const line = (x, y, x2, y2) =>
   `<path d="M${x} ${y}L${x2} ${y2}" stroke="${C.border}" fill="none"/>`;
 function svg(w, h, title, body) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title"><title id="title">${xml(title)}</title><style>text{font-family:Arial,Helvetica,sans-serif}.mono{font-family:monospace;letter-spacing:1px}.pulse{animation:pulse 3s ease-in-out infinite}.flow{stroke-dasharray:8 12;animation:flow 4s linear infinite}.reveal{animation:reveal 1.2s ease-out both}@keyframes pulse{50%{opacity:.35}}@keyframes flow{to{stroke-dashoffset:-80}}@keyframes reveal{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.pulse,.flow,.reveal{animation:none}}</style>${rect(0, 0, w, h, C.bg, 18)}${body}</svg>\n`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title"><title id="title">${xml(title)}</title><style>text{font-family:Arial,Helvetica,sans-serif}.mono{font-family:monospace;letter-spacing:1px}.pulse{animation:pulse 3s ease-in-out infinite}.flow{stroke-dasharray:8 12;animation:flow 4s linear infinite}.reveal{animation:reveal 1.2s ease-out both}@keyframes pulse{50%{opacity:.35}}@keyframes flow{to{stroke-dashoffset:-80}}@keyframes reveal{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.pulse,.flow,.reveal{animation:none}}</style>${rect(0, 0, w, h, C.bg, 0)}${body}</svg>\n`;
 }
 async function save(name, content) {
   await mkdir(new URL("assets/generated/", root), { recursive: true });
@@ -47,7 +47,7 @@ const metrics = [
   ["PUBLIC REPOSITORIES", data.publicRepos],
   ["REPOSITORY STARS", data.stars],
   ["FOLLOWERS", data.followers],
-  ["ACTIVE REPOS / 90 DAYS", data.activity?.total || 0],
+  ["CONTRIBUTIONS / YEAR", data.contributions?.total || 0],
 ];
 await save(
   "dashboard",
@@ -66,7 +66,7 @@ await save(
       })
       .join(
         "",
-      )}${text(30, 211, "Public repository statistics. Refreshed from GitHub.", 10, C.muted)}`,
+      )}${text(30, 211, "Public GitHub statistics · refreshed automatically", 10, C.muted)}`,
   ),
 );
 const languages = data.languages.slice(0, 6),
@@ -213,6 +213,191 @@ await save(
     `${text(34, 38, "CONTACT", 10, C.muted, mono)}${text(32, 88, "Adarsh P Baiju.", 36, C.text, 'font-weight="700" letter-spacing="-1"')}${rect(1010, 33, 155, 69, C.lime, 12)}${text(1087, 75, "EMAIL ME ↗", 13, C.bg, 'text-anchor="middle" font-weight="700"')}`,
   ),
 );
-console.log(
-  `Built ${5 + profile.projects.length + groups.length} profile assets from verified public data.`,
+
+if (data.contributions?.days?.length) {
+  const calendar = data.contributions.days;
+  const start = new Date(calendar[0].date + "T00:00:00Z");
+  start.setUTCDate(start.getUTCDate() - start.getUTCDay());
+  const colors = ["#263D2C", "#426036", "#6A8D45", "#9DBD58", C.lime];
+  const cells = calendar
+    .map((day) => {
+      const d = new Date(day.date + "T00:00:00Z");
+      const week = Math.floor((d - start) / 86400000 / 7),
+        row = d.getUTCDay();
+      return (
+        "<g><title>" +
+        xml(day.date) +
+        ": " +
+        day.count +
+        ' contributions</title><rect class="calendar-cell ' +
+        (day.count ? "calendar-active" : "") +
+        '" style="animation-delay:' +
+        week * 0.018 +
+        's" x="' +
+        (55 + week * 21) +
+        '" y="' +
+        (83 + row * 21) +
+        '" width="17" height="17" rx="4" fill="' +
+        colors[Math.min(4, day.level)] +
+        '"/></g>'
+      );
+    })
+    .join("");
+  const styles =
+    "<style>.calendar-cell{transform-box:fill-box;transform-origin:center;animation:calendar-reveal .65s ease-out both}.calendar-active{animation:calendar-reveal .65s ease-out both,calendar-glow 5s ease-in-out infinite}.calendar-scan{animation:calendar-scan 9s linear infinite}@keyframes calendar-reveal{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}@keyframes calendar-glow{50%{filter:brightness(1.3)}}@keyframes calendar-scan{from{transform:translateX(-90px)}to{transform:translateX(1140px)}}@media(prefers-reduced-motion:reduce){.calendar-cell,.calendar-active,.calendar-scan{animation:none}.calendar-scan{display:none}}</style>";
+  await save(
+    "contributions",
+    svg(
+      1200,
+      290,
+      "Public GitHub contribution calendar",
+      styles +
+        text(32, 35, "CONTRIBUTIONS / LAST 12 MONTHS", 12, C.lime, mono) +
+        text(
+          1168,
+          36,
+          number(data.contributions.total) + " contributions",
+          18,
+          C.text,
+          'text-anchor="end"',
+        ) +
+        cells +
+        '<svg x="55" y="80" width="1110" height="151" viewBox="0 0 1110 151"><rect class="calendar-scan" width="60" height="151" fill="#C7F464" opacity=".045"/></svg>' +
+        text(
+          32,
+          263,
+          calendar[0].date + " — " + calendar.at(-1).date,
+          10,
+          C.muted,
+          mono,
+        ) +
+        text(
+          1168,
+          263,
+          "SOURCE / GITHUB PUBLIC PROFILE",
+          9,
+          C.muted,
+          mono + ' text-anchor="end"',
+        ),
+    ),
+  );
+}
+await save(
+  "profile",
+  svg(
+    1200,
+    325,
+    "Profile and current focus",
+    `
+ ${text(32, 37, "PROFILE", 12, C.lime, mono)}${line(32, 57, 1168, 57)}
+ ${rect(32, 80, 650, 214)}${rect(700, 80, 468, 214)}
+ ${text(54, 116, "About me", 25, C.text, 'font-weight="700"')}
+ ${text(54, 153, "Python backend developer based in Kerala, India.", 18, C.muted)}
+ ${text(54, 183, "Building web applications with Django and REST APIs.", 18, C.muted)}
+ ${text(54, 227, "Junior Python Developer", 18, C.lime)}
+ ${text(54, 256, "Yafei AI Technologies · November 2024 — Present", 16, C.muted)}
+ ${text(722, 116, "Current focus", 25, C.text, 'font-weight="700"')}
+ ${text(722, 155, "System design and distributed systems", 17, C.muted)}
+ ${text(722, 185, "Microservices and backend architecture", 17, C.muted)}
+ ${text(722, 229, "PYTHON / DJANGO / REST APIs", 11, C.lime, mono)}
+ ${text(722, 262, "CELERY / REDIS / POSTGRESQL", 11, C.muted, mono)}
+`,
+  ),
 );
+for (const [slug, label] of [
+  ["dashboard", "Dashboard"],
+  ["toolkit", "Toolkit"],
+  ["projects", "Selected projects"],
+  ["contact", "Contact"],
+]) {
+  await save(
+    `heading-${slug}`,
+    svg(
+      1200,
+      76,
+      label,
+      `${text(32, 48, label, 28, C.text, 'font-weight="700"')}${line(310, 40, 1168, 40)}`,
+    ),
+  );
+}
+const nested = async (name, x, y, w, h) => {
+  let source = await readFile(
+    new URL(`assets/generated/${name}.svg`, root),
+    "utf8",
+  );
+  source = source
+    .replace(/<title\b[^>]*>[\s\S]*?<\/title>/g, "")
+    .replace(/aria-labelledby="title"/g, "");
+  return source
+    .replace("<svg ", `<svg x="${x}" y="${y}" width="${w}" height="${h}" `)
+    .replace(/ width="\d+" height="\d+" viewBox/, " viewBox");
+};
+await save(
+  "toolkit",
+  svg(
+    1200,
+    458,
+    "Languages, backend, frontend, data and delivery toolkit",
+    (await nested("toolkit-languages", 0, 0, 592, 210)) +
+      (await nested("toolkit-backend", 608, 0, 592, 210)) +
+      (await nested("toolkit-frontend", 0, 225, 592, 210)) +
+      (await nested("toolkit-tooling", 608, 225, 592, 210)),
+  ),
+);
+await save(
+  "data-note",
+  svg(
+    1200,
+    50,
+    "Dashboard measurement notes",
+    text(
+      32,
+      31,
+      "Public GitHub data · Languages counted by repository · Contributions from the public profile calendar",
+      13,
+      C.muted,
+    ),
+  ),
+);
+await save(
+  "repositories",
+  svg(
+    1200,
+    64,
+    "Browse all public repositories",
+    `${text(32, 40, "Browse all repositories", 20, C.text)}${text(1165, 42, "↗", 28, C.lime, 'text-anchor="end"')}`,
+  ),
+);
+for (const [slug, label] of [
+  ["email", profile.email],
+  ["linkedin", "LinkedIn ↗"],
+  ["github", "GitHub ↗"],
+]) {
+  await save(
+    `link-${slug}`,
+    svg(
+      600,
+      90,
+      label,
+      `${rect(12, 12, 576, 66, C.panel, 8)}${text(300, 54, label, 20, C.lime, 'text-anchor="middle"')}`,
+    ),
+  );
+}
+for (const [slug, label] of [
+  ["profile", "PROFILE"],
+  ["dashboard", "DASHBOARD"],
+  ["toolkit", "TOOLKIT"],
+  ["selected-projects", "PROJECTS"],
+  ["contact", "CONTACT"],
+]) {
+  await save(
+    `nav-${slug}`,
+    svg(
+      240,
+      58,
+      label,
+      text(120, 36, label, 13, C.lime, `${mono} text-anchor="middle"`),
+    ),
+  );
+}
+console.log("Built the complete custom profile asset set.");

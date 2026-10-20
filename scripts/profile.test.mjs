@@ -1,6 +1,24 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { xml, summarize } from "./lib.mjs";
+import { xml, summarize, parseContributions } from "./lib.mjs";
+
+test("reads dated public contribution cells with accurate counts", () => {
+  const html =
+    '<td data-date="2026-10-20" id="today" data-level="2"></td><td data-level="0" id="yesterday" data-date="2026-10-19"></td><tool-tip for="today">12 contributions on October 20th.</tool-tip><tool-tip for="yesterday">No contributions on October 19th.</tool-tip>';
+  assert.deepEqual(parseContributions(html), [
+    { date: "2026-10-19", count: 0, level: 0 },
+    { date: "2026-10-20", count: 12, level: 2 },
+  ]);
+});
+test("rejects unknown contribution markup instead of inventing zero counts", () => {
+  assert.throws(
+    () =>
+      parseContributions(
+        '<td data-date="2026-10-20" id="missing" data-level="2"></td>',
+      ),
+    /markup changed/,
+  );
+});
 
 test("escapes profile content before placing it inside an SVG", () => {
   assert.equal(

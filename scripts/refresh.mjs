@@ -1,5 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
-import { summarize } from "./lib.mjs";
+import { summarize, parseContributions } from "./lib.mjs";
 const profile = JSON.parse(
   await readFile(new URL("../data/profile.json", import.meta.url), "utf8"),
 );
@@ -46,6 +46,27 @@ const activity = {
   metric: "latest-repository-push",
 };
 const data = summarize(user, repos, activity);
+const calendarResponse = await fetch(
+  `https://github.com/users/${encodeURIComponent(profile.username)}/contributions`,
+  {
+    headers: { "User-Agent": "adarsh-profile-dashboard", Accept: "text/html" },
+    signal: AbortSignal.timeout(30000),
+  },
+);
+if (!calendarResponse.ok)
+  throw new Error(
+    `Contribution calendar failed (${calendarResponse.status}); existing assets preserved.`,
+  );
+const contributionDays = parseContributions(await calendarResponse.text());
+if (contributionDays.length < 300)
+  throw new Error(
+    "Contribution calendar is incomplete; existing assets preserved.",
+  );
+data.contributions = {
+  days: contributionDays,
+  total: contributionDays.reduce((n, day) => n + day.count, 0),
+  source: "public-github-calendar",
+};
 await writeFile(
   new URL("../data/github.json", import.meta.url),
   `${JSON.stringify(data, null, 2)}\n`,

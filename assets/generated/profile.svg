@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="325" viewBox="0 0 1200 325" role="img" aria-labelledby="title"><title id="title">Profile and current focus</title><style>text{font-family:Arial,Helvetica,sans-serif}.mono{font-family:monospace;letter-spacing:1px}.pulse{animation:pulse 3s ease-in-out infinite}.flow{stroke-dasharray:8 12;animation:flow 4s linear infinite}.reveal{animation:reveal 1.2s ease-out both}@keyframes pulse{50%{opacity:.35}}@keyframes flow{to{stroke-dashoffset:-80}}@keyframes reveal{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.pulse,.flow,.reveal{animation:none}}</style><rect x="0" y="0" width="1200" height="325" rx="0" fill="#15271F" />
+ <text x="32" y="37" font-size="12" fill="#C7F464" class="mono">PROFILE</text><path d="M32 57L1168 57" stroke="#405C3B" fill="none"/>
+ <rect x="32" y="80" width="650" height="214" rx="12" fill="#1E3528" /><rect x="700" y="80" width="468" height="214" rx="12" fill="#1E3528" />
+ <text x="54" y="116" font-size="25" fill="#F0F4E7" font-weight="700">About me</text>
+ <text x="54" y="153" font-size="18" fill="#A9BE9A" >Python backend developer based in Kerala, India.</text>
+ <text x="54" y="183" font-size="18" fill="#A9BE9A" >Building web applications with Django and REST APIs.</text>
+ <text x="54" y="227" font-size="18" fill="#C7F464" >Junior Python Developer</text>
+ <text x="54" y="256" font-size="16" fill="#A9BE9A" >Yafei AI Technologies · November 2024 — Present</text>
+ <text x="722" y="116" font-size="25" fill="#F0F4E7" font-weight="700">Current focus</text>
+ <text x="722" y="155" font-size="17" fill="#A9BE9A" >System design and distributed systems</text>
+ <text x="722" y="185" font-size="17" fill="#A9BE9A" >Microservices and backend architecture</text>
+ <text x="722" y="229" font-size="11" fill="#C7F464" class="mono">PYTHON / DJANGO / REST APIs</text>
+ <text x="722" y="262" font-size="11" fill="#A9BE9A" class="mono">CELERY / REDIS / POSTGRESQL</text>
+</svg>

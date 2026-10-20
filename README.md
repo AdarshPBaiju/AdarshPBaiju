@@ -1,91 +1,13 @@
-<p align="center"><img src="assets/generated/hero.svg" width="100%" alt="Adarsh P Baiju — Python Backend Developer. Thoughtful APIs. Dependable systems." /></p>
+<div align="center"><img src="assets/generated/hero.svg" width="100%" align="top" alt="Adarsh P Baiju — Python Backend Developer. Django, REST APIs and PostgreSQL." /></div>
 
-<p align="center"><a href="#profile">PROFILE</a> &nbsp; / &nbsp; <a href="#dashboard">DASHBOARD</a> &nbsp; / &nbsp; <a href="#toolkit">TOOLKIT</a> &nbsp; / &nbsp; <a href="#selected-projects">PROJECTS</a> &nbsp; / &nbsp; <a href="#contact">CONTACT</a></p>
+<div align="center"><a href="#profile"><img src="assets/generated/nav-profile.svg" width="20%" align="top" alt="PROFILE" /></a><a href="#dashboard"><img src="assets/generated/nav-dashboard.svg" width="20%" align="top" alt="DASHBOARD" /></a><a href="#toolkit"><img src="assets/generated/nav-toolkit.svg" width="20%" align="top" alt="TOOLKIT" /></a><a href="#selected-projects"><img src="assets/generated/nav-selected-projects.svg" width="20%" align="top" alt="PROJECTS" /></a><a href="#contact"><img src="assets/generated/nav-contact.svg" width="20%" align="top" alt="CONTACT" /></a></div>
 
-## Profile
+<div><a name="profile"></a><img src="assets/generated/profile.svg" width="100%" align="top" alt="About Adarsh: Python backend developer in Kerala. Junior Python Developer at Yafei AI Technologies since November 2024. Current focus: system design, distributed systems and microservices." /></div>
 
-<table width="100%">
-<tr>
-<td width="56%" valign="top">
-<h3>About me</h3>
-<p>I'm <strong>Adarsh P Baiju</strong>, a Python backend developer based in <strong>Kerala, India</strong>. I build web applications with Django and REST APIs, connecting application logic, data, and background work.</p>
-<p><strong>Currently:</strong> Junior Python Developer at Yafei AI Technologies, since November 2024.</p>
-<p><a href="mailto:adarshpbaiju@outlook.com">Email ↗</a> &nbsp; · &nbsp; <a href="https://linkedin.com/in/adarsh-p-baiju">LinkedIn ↗</a></p>
-</td>
-<td width="44%" valign="top">
-<h3>Current focus</h3>
-<p><strong>Building</strong><br />Python and Django web applications.</p>
-<p><strong>Exploring</strong><br />System design, distributed systems, and microservices.</p>
-<p><strong>Core areas</strong><br />REST APIs, Celery, Redis, and backend architecture.</p>
-</td>
-</tr>
-</table>
+<div><a name="dashboard"></a><img src="assets/generated/heading-dashboard.svg" width="100%" align="top" alt="Dashboard" /><a href="https://github.com/AdarshPBaiju?tab=repositories"><img src="assets/generated/dashboard.svg" width="100%" align="top" alt="Public GitHub repositories, stars, followers and recently active repositories" /></a><img src="assets/generated/languages.svg" width="100%" align="top" alt="Primary languages across original public repositories" /><img src="assets/generated/contributions.svg" width="100%" align="top" alt="Animated contribution calendar from the public GitHub profile" /><img src="assets/generated/data-note.svg" width="100%" align="top" alt="Public metadata. Languages are counted by repository; contributions are from GitHub’s public profile calendar." /></div>
 
-## Dashboard
+<div><a name="toolkit"></a><img src="assets/generated/heading-toolkit.svg" width="100%" align="top" alt="Toolkit" /><img src="assets/generated/toolkit.svg" width="100%" align="top" alt="Python, JavaScript, C++, Django REST Framework and REST APIs, Flask, Celery, Redis, React, HTML, CSS, SCSS, PostgreSQL, Docker, Git and Linux." /></div>
 
-<p><a href="https://github.com/AdarshPBaiju?tab=repositories"><img src="assets/generated/dashboard.svg" width="100%" alt="Public GitHub repositories, stars, followers, and repositories active during the last 90 days" /></a></p>
-<p><img src="assets/generated/languages.svg" width="100%" alt="Primary languages of original public repositories" /></p>
-<p><img src="assets/generated/activity.svg" width="100%" alt="A 90-day timeline of the latest push date of each public repository" /></p>
+<div><a name="selected-projects"></a><img src="assets/generated/heading-projects.svg" width="100%" align="top" alt="Selected projects" /><a href="https://github.com/AdarshPBaiju/chronoflow"><img src="assets/generated/project-chronoflow.svg" width="50%" align="top" alt="ChronoFlow: Projects, workflow columns and timed task sessions, with notes, analytics and reports." /></a><a href="https://github.com/AdarshPBaiju/Ecommerce-with-payment"><img src="assets/generated/project-ecommerce-with-payment.svg" width="50%" align="top" alt="Ecommerce Platform: Product discovery, shopping carts and payments, with order management and notifications." /></a><a href="https://github.com/AdarshPBaiju/job-portal"><img src="assets/generated/project-job-portal.svg" width="50%" align="top" alt="Job Portal: Connecting employer job listings with candidates, applications and authenticated dashboards." /></a><a href="https://github.com/AdarshPBaiju/hospital_management"><img src="assets/generated/project-hospital_management.svg" width="50%" align="top" alt="Hospital Management: Online patient bookings, doctor listings, specialties and hospital departments." /></a><a href="https://github.com/AdarshPBaiju/URL-SHORTNER"><img src="assets/generated/project-url-shortner.svg" width="50%" align="top" alt="URL Shortener: Short links, redirect handling and basic analytics. Short URL generation and redirect analytics." /></a><a href="https://github.com/AdarshPBaiju/todo-react"><img src="assets/generated/project-todo-react.svg" width="50%" align="top" alt="Todo PWA: A React task manager with PWA integration, date controls and a responsive interface." /></a><a href="https://github.com/AdarshPBaiju?tab=repositories"><img src="assets/generated/repositories.svg" width="100%" align="top" alt="Browse all public repositories" /></a></div>
 
-<sub>Public GitHub data. Languages are counted by repository; the timeline shows each repository's latest push.</sub>
-
-## Toolkit
-
-<table width="100%">
-<tr>
-<td width="50%"><img src="assets/generated/toolkit-languages.svg" width="100%" alt="Languages: Python, JavaScript, C++" /></td>
-<td width="50%"><img src="assets/generated/toolkit-backend.svg" width="100%" alt="Backend: Django, Django REST Framework and REST APIs, Flask, Celery, Redis" /></td>
-</tr>
-<tr>
-<td width="50%"><img src="assets/generated/toolkit-frontend.svg" width="100%" alt="Frontend: React, HTML, CSS, SCSS" /></td>
-<td width="50%"><img src="assets/generated/toolkit-tooling.svg" width="100%" alt="Data and tools: PostgreSQL, Docker, Git, Linux" /></td>
-</tr>
-</table>
-
-## Selected projects
-
-<table width="100%">
-<tr>
-<td width="50%" valign="top"><a href="https://github.com/AdarshPBaiju/chronoflow"><img src="assets/generated/project-chronoflow.svg" width="100%" alt="ChronoFlow: Projects, workflow columns and timed task sessions, with notes, analytics and reports." /></a></td>
-<td width="50%" valign="top"><a href="https://github.com/AdarshPBaiju/Ecommerce-with-payment"><img src="assets/generated/project-ecommerce-with-payment.svg" width="100%" alt="Ecommerce Platform: Product discovery, shopping carts and payments, with order management and notifications." /></a></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><a href="https://github.com/AdarshPBaiju/job-portal"><img src="assets/generated/project-job-portal.svg" width="100%" alt="Job Portal: Connecting employer job listings with candidates, applications and authenticated dashboards." /></a></td>
-<td width="50%" valign="top"><a href="https://github.com/AdarshPBaiju/hospital_management"><img src="assets/generated/project-hospital_management.svg" width="100%" alt="Hospital Management: Online patient bookings, doctor listings, specialties and hospital departments." /></a></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><a href="https://github.com/AdarshPBaiju/URL-SHORTNER"><img src="assets/generated/project-url-shortner.svg" width="100%" alt="URL Shortener: Short links, redirect handling and basic analytics. A focused Django application." /></a></td>
-<td width="50%" valign="top"><a href="https://github.com/AdarshPBaiju/todo-react"><img src="assets/generated/project-todo-react.svg" width="100%" alt="Todo PWA: A React task manager with PWA integration, date controls and a responsive interface." /></a></td>
-</tr>
-</table>
-
-<details>
-<summary><strong>Inside the builds</strong></summary>
-
-| Project                                                                      | What you can explore                                                                                          |
-| :--------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------ |
-| [ChronoFlow](https://github.com/AdarshPBaiju/chronoflow)                     | Django REST and React application with project workflows, timed task sessions, notes, analytics, and reports. |
-| [Ecommerce Platform](https://github.com/AdarshPBaiju/Ecommerce-with-payment) | Authentication, categories and brands, shopping carts, orders, payments, and email/SMS notifications.         |
-| [Job Portal](https://github.com/AdarshPBaiju/job-portal)                     | Job listings, employer dashboard, candidate applications, and authentication.                                 |
-| [Hospital Management](https://github.com/AdarshPBaiju/hospital_management)   | Patient appointment bookings, doctor specialties, and department listings.                                    |
-| [URL Shortener](https://github.com/AdarshPBaiju/URL-SHORTNER)                | Short link generation, redirects, and basic analytics.                                                        |
-| [Todo PWA](https://github.com/AdarshPBaiju/todo-react)                       | React and TypeScript task application with date controls and PWA integration.                                 |
-
-</details>
-
-<details>
-<summary><strong>Other repositories</strong></summary>
-
-- [Django Todo](https://github.com/AdarshPBaiju/todo): task creation, updates, deletion, completion, and priorities.
-- [React 3D Gallery](https://github.com/AdarshPBaiju/3dmodelReact): a React 3D model gallery.
-- [GSAP Workshop](https://github.com/AdarshPBaiju/GSAP-Workshop): animation experiments.
-
-</details>
-
-<p align="right"><a href="https://github.com/AdarshPBaiju?tab=repositories">Browse all repositories ↗</a></p>
-
-## Contact
-
-<a href="mailto:adarshpbaiju@outlook.com"><img src="assets/generated/contact.svg" width="100%" alt="Contact Adarsh by email" /></a>
-
-<p align="center"><a href="mailto:adarshpbaiju@outlook.com">adarshpbaiju@outlook.com</a> &nbsp; · &nbsp; <a href="https://linkedin.com/in/adarsh-p-baiju">LinkedIn</a> &nbsp; · &nbsp; <a href="https://github.com/AdarshPBaiju">GitHub</a></p>
+<div><a name="contact"></a><img src="assets/generated/heading-contact.svg" width="100%" align="top" alt="Contact" /><a href="mailto:adarshpbaiju@outlook.com"><img src="assets/generated/contact.svg" width="100%" align="top" alt="Contact Adarsh P Baiju by email" /></a><a href="mailto:adarshpbaiju@outlook.com"><img src="assets/generated/link-email.svg" width="50%" align="top" alt="adarshpbaiju@outlook.com" /></a><a href="https://linkedin.com/in/adarsh-p-baiju"><img src="assets/generated/link-linkedin.svg" width="25%" align="top" alt="LinkedIn" /></a><a href="https://github.com/AdarshPBaiju"><img src="assets/generated/link-github.svg" width="25%" align="top" alt="GitHub" /></a></div>
