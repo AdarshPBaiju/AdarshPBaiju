@@ -1,5 +1,6 @@
 import { readFile, readdir, access } from "node:fs/promises";
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 const root = new URL("../", import.meta.url);
 const readme = await readFile(new URL("README.md", root), "utf8");
 for (const match of readme.matchAll(/(?:src|href)="([^"#]+)"/g)) {
@@ -10,6 +11,18 @@ for (const match of readme.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   local.search = "";
   local.hash = "";
   await access(local);
+  if (path.startsWith("assets/rendered/")) {
+    const hash = path.match(/--([a-f0-9]{12})\.svg$/)?.[1];
+    assert(hash, `Image must have an immutable content filename: ${path}`);
+    assert.equal(
+      createHash("sha256")
+        .update(await readFile(local))
+        .digest("hex")
+        .slice(0, 12),
+      hash,
+      `Stale image version: ${path}`,
+    );
+  }
 }
 const names = await readdir(new URL("assets/generated/", root));
 for (const name of names) {

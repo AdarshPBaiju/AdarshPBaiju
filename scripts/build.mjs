@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, readdir, unlink } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { xml } from "./lib.mjs";
 import { motionCss, projectPreview, calendarArtwork } from "./motion.mjs";
@@ -494,26 +494,34 @@ for (const [slug, label] of [
     ),
   );
 }
-// Content-derived versions let GitHub request updated artwork after a stats refresh.
+// Immutable filenames prevent old CDN responses from surviving an artwork update.
 const readmeUrl = new URL("README.md", root);
 let readme = await readFile(readmeUrl, "utf8");
-const imageSources = [
-  ...new Set(
-    [
-      ...readme.matchAll(
-        /src="(assets\/generated\/[^"?]+\.svg)(?:\?[^\"]*)?"/g,
-      ),
-    ].map((match) => match[1]),
+const references = [
+  ...readme.matchAll(
+    /src="(assets\/(?:generated|rendered)\/([^"?]+)\.svg)(?:\?[^\"]*)?"/g,
   ),
 ];
-for (const source of imageSources) {
-  const content = await readFile(new URL(source, root));
-  const hash = createHash("sha256").update(content).digest("hex").slice(0, 12);
-  const escaped = source.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  readme = readme.replace(
-    new RegExp(`src="${escaped}(?:\\?[^\\"]*)?"`, "g"),
-    `src="${source}?v=${hash}"`,
+const used = new Set();
+await mkdir(new URL("assets/rendered/", root), { recursive: true });
+for (const [tag, , filename] of references) {
+  const name = filename.replace(/--[a-f0-9]{12}$/, "");
+  if (!/^[a-z0-9_-]+$/.test(name))
+    throw new Error("Invalid asset name: " + name);
+  const content = await readFile(
+    new URL("assets/generated/" + name + ".svg", root),
   );
+  const hash = createHash("sha256").update(content).digest("hex").slice(0, 12);
+  const output = name + "--" + hash + ".svg";
+  used.add(output);
+  await writeFile(new URL("assets/rendered/" + output, root), content);
+  readme = readme.replace(tag, 'src="assets/rendered/' + output + '"');
 }
 await writeFile(readmeUrl, readme);
-console.log("Built the complete custom profile asset set.");
+for (const name of await readdir(new URL("assets/rendered/", root))) {
+  if (/^[a-z0-9_-]+--[a-f0-9]{12}\.svg$/.test(name) && !used.has(name))
+    await unlink(new URL("assets/rendered/" + name, root));
+}
+console.log(
+  "Built the custom profile with " + used.size + " immutable image paths.",
+);

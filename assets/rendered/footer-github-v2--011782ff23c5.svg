@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="396" height="90" viewBox="0 0 396 90" role="img" aria-labelledby="title"><title id="title">GitHub ↗</title><style>
+text{font-family:Arial,'Segoe UI',sans-serif}.mono{font-family:Consolas,'Liberation Mono',monospace;letter-spacing:.8px}
+.motion-rise{animation:motion-rise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--delay,0s)}
+.motion-number{animation:motion-rise 1s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--delay,0s)}
+.motion-border{stroke-dasharray:70 900;animation:motion-border 9s linear infinite;fill:none;stroke:#C7F464;stroke-opacity:.38}
+.motion-bar{transform-box:fill-box;transform-origin:left;animation:motion-bar 1.6s cubic-bezier(.2,.7,.2,1) both}
+.motion-packet{stroke-dasharray:5 70;animation:motion-packet 3s linear infinite;fill:none;stroke:#C7F464;stroke-width:3}
+.motion-cursor{animation:motion-cursor 1s steps(1) infinite}
+.motion-orbit{transform-box:fill-box;transform-origin:center;animation:motion-orbit 8s linear infinite}
+.motion-float{animation:motion-float 5s ease-in-out infinite;animation-delay:var(--delay,0s)}
+.motion-pulse{animation:motion-pulse 4s ease-in-out infinite;animation-delay:var(--delay,0s)}
+.motion-name{animation:motion-name 1.5s cubic-bezier(.2,.7,.2,1) both}
+.scene-a{animation:scene-a 9s ease-in-out infinite}.scene-b{opacity:0;animation:scene-b 9s ease-in-out infinite}
+.calendar-cell{transform-box:fill-box;transform-origin:center;animation:calendar-cell .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--delay,0s)}
+.calendar-glow{animation:motion-pulse 5s ease-in-out infinite;animation-delay:var(--delay,0s)}
+.calendar-scan{animation:calendar-scan 12s linear infinite}
+@keyframes motion-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes motion-border{to{stroke-dashoffset:-970}}
+@keyframes motion-bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes motion-packet{to{stroke-dashoffset:-150}}
+@keyframes motion-cursor{50%{opacity:0}}
+@keyframes motion-orbit{to{transform:rotate(360deg)}}
+@keyframes motion-float{50%{transform:translateY(-3px)}}
+@keyframes motion-pulse{50%{opacity:.6}}
+@keyframes motion-name{from{width:0}to{width:740px}}
+@keyframes scene-a{0%,40%,100%{opacity:1}48%,90%{opacity:0}}
+@keyframes scene-b{0%,40%,100%{opacity:0}48%,90%{opacity:1}}
+@keyframes calendar-cell{from{opacity:0;transform:scale(.35)}to{opacity:1;transform:scale(1)}}
+@keyframes calendar-scan{from{transform:translateX(-100px)}to{transform:translateX(1130px)}}
+@media(prefers-reduced-motion:reduce){.motion-rise,.motion-number,.motion-border,.motion-bar,.motion-packet,.motion-cursor,.motion-orbit,.motion-float,.motion-pulse,.motion-name,.scene-a,.scene-b,.calendar-cell,.calendar-glow,.calendar-scan{animation:none!important;transform:none}.motion-name{width:740px}.scene-a{opacity:1}.scene-b,.calendar-scan{display:none}.motion-rise,.motion-number,.motion-bar,.calendar-cell{opacity:1}}
+
+text{font-family:'Trebuchet MS',Arial,sans-serif}
+text[font-weight="700"]{font-family:Impact,'Arial Black',Arial,sans-serif;letter-spacing:.2px}
+.mono{font-family:Consolas,'Liberation Mono',monospace;font-weight:700;letter-spacing:.6px}
+.motion-border{stroke:#1B1B25;stroke-opacity:.5;stroke-width:2}
+.motion-packet{stroke:#244BC4;stroke-width:4}
+.motion-rise{animation-name:comic-pop}
+.calendar-cell rect{stroke:#1B1B25;stroke-width:.8}
+.comic-spark{transform-box:fill-box;transform-origin:center;animation:comic-spark 3s steps(2,end) infinite}
+.comic-bubble{animation:comic-pop .7s cubic-bezier(.2,.8,.3,1.3) both;animation-delay:.3s}
+@keyframes comic-pop{from{opacity:0;transform:translateY(9px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes comic-spark{50%{opacity:.5;transform:scale(.9)}}
+@media(prefers-reduced-motion:reduce){.comic-spark,.comic-bubble{animation:none}}
+</style><rect x="0" y="0" width="396" height="90" rx="0" fill="#FFF2D4" /><defs><pattern id="comic-dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".8" fill="#1B1B25" opacity=".11"/></pattern></defs><rect width="396" height="90" fill="url(#comic-dots)"/><path d="M301 1L341 1M316 9L356 9M331 17L371 17" stroke="#1B1B25" stroke-width="2" opacity=".18"/><rect x="16" y="16" width="372" height="66" rx="3" fill="#1B1B25"/><rect x="12" y="12" width="372" height="66" rx="3" fill="#FFFCF4" stroke="#1B1B25" stroke-width="2.5" /><text x="198" y="54" font-size="18" fill="#BD263C" text-anchor="middle">GitHub ↗</text></svg>
