@@ -1,30 +1,73 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { xml } from "./lib.mjs";
-import { motionCss, hero, projectPreview, calendarArtwork } from "./motion.mjs";
+import { motionCss, projectPreview, calendarArtwork } from "./motion.mjs";
+import { comicCss, comicPaper, comicHero } from "./comic.mjs";
 const root = new URL("../", import.meta.url);
 const load = async (path) =>
   JSON.parse(await readFile(new URL(path, root), "utf8"));
 const profile = await load("data/profile.json");
 const data = await load("data/github.json");
 const C = {
-  bg: "#15271F",
-  panel: "#1E3528",
-  border: "#405C3B",
-  lime: "#C7F464",
-  text: "#F0F4E7",
-  muted: "#A9BE9A",
-  soft: "#8BAC73",
+  bg: "#FFF2D4",
+  panel: "#FFFCF4",
+  border: "#1B1B25",
+  lime: "#BD263C",
+  text: "#1B1B25",
+  muted: "#47444A",
+  soft: "#3158B7",
+  blue: "#244BC4",
+  yellow: "#FFD447",
 };
 const number = (value) => Number(value || 0).toLocaleString("en-US");
 const text = (x, y, value, size = 16, color = C.text, extra = "") =>
   `<text x="${x}" y="${y}" font-size="${Math.max(11, size)}" fill="${color}" ${extra}>${xml(value)}</text>`;
-const rect = (x, y, w, h, fill = C.panel, rx = 12, extra = "") =>
-  `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${fill}" ${extra}/>`;
+const rect = (x, y, w, h, fill = C.panel, rx = 0, extra = "") => {
+  const framed = h >= 25 && w >= 60 && fill !== C.bg;
+  const shadow = framed
+    ? '<rect x="' +
+      (x + 4) +
+      '" y="' +
+      (y + 4) +
+      '" width="' +
+      w +
+      '" height="' +
+      h +
+      '" rx="' +
+      Math.min(rx, 3) +
+      '" fill="' +
+      C.text +
+      '"/>'
+    : "";
+  const border =
+    framed && !/stroke=/.test(extra)
+      ? ' stroke="' + C.text + '" stroke-width="2.5"'
+      : "";
+  return (
+    shadow +
+    '<rect x="' +
+    x +
+    '" y="' +
+    y +
+    '" width="' +
+    w +
+    '" height="' +
+    h +
+    '" rx="' +
+    Math.min(rx, 3) +
+    '" fill="' +
+    fill +
+    '"' +
+    border +
+    " " +
+    extra +
+    "/>"
+  );
+};
 const line = (x, y, x2, y2) =>
-  `<path d="M${x} ${y}L${x2} ${y2}" stroke="${C.border}" fill="none"/>`;
+  `<path d="M${x} ${y}L${x2} ${y2}" stroke="${C.border}" stroke-width="2" fill="none"/>`;
 function svg(w, h, title, body) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title"><title id="title">${xml(title)}</title><style>${motionCss}</style>${rect(0, 0, w, h, C.bg, 0)}${body}</svg>\n`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title"><title id="title">${xml(title)}</title><style>${motionCss}${comicCss}</style>${rect(0, 0, w, h, C.bg, 0)}${comicPaper(w, h)}${body}</svg>\n`;
 }
 async function save(name, content) {
   await mkdir(new URL("assets/generated/", root), { recursive: true });
@@ -37,7 +80,7 @@ await save(
     1200,
     380,
     profile.name + " — " + profile.role,
-    hero(profile, { text, rect, line, C, mono }),
+    comicHero(profile, { text, rect, line, C, mono }),
   ),
 );
 const date = data.fetchedAt.slice(0, 10);
@@ -120,7 +163,7 @@ await save(
         return (
           text(x, y, name, 13) +
           text(x + 340, y, count + " repos", 10, C.muted, 'text-anchor="end"') +
-          rect(x, y + 10, 340, 5, "#30472E", 2) +
+          rect(x, y + 10, 340, 5, "#DFD4BB", 2) +
           rect(
             x,
             y + 10,
@@ -152,7 +195,7 @@ await save(
     `${text(30, 32, "REPOSITORY UPDATES / 90-DAY WINDOW", 11, C.lime, mono)}${text(1170, 32, "EACH REPOSITORY’S LATEST PUSH", 9, C.muted, `${mono} text-anchor="end"`)}${days
       .map((day, i) => {
         const height = Math.max(3, (day.count / max) * 103);
-        return `<g><title>${xml(day.date)}: ${day.count} repository updates</title>${rect(32 + i * 12.6, 165 - height, 8, height, day.count ? C.lime : "#2B432D", 3)}</g>`;
+        return `<g><title>${xml(day.date)}: ${day.count} repository updates</title>${rect(32 + i * 12.6, 165 - height, 8, height, day.count ? C.lime : "#DFD4BB", 3)}</g>`;
       })
       .join(
         "",

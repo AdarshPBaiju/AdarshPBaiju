@@ -32,25 +32,11 @@ text{font-family:Arial,'Segoe UI',sans-serif}.mono{font-family:Consolas,'Liberat
 @media(prefers-reduced-motion:reduce){.motion-rise,.motion-number,.motion-border,.motion-bar,.motion-packet,.motion-cursor,.motion-orbit,.motion-float,.motion-pulse,.motion-name,.scene-a,.scene-b,.calendar-cell,.calendar-glow,.calendar-scan{animation:none!important;transform:none}.motion-name{width:740px}.scene-a{opacity:1}.scene-b,.calendar-scan{display:none}.motion-rise,.motion-number,.motion-bar,.calendar-cell{opacity:1}}
 `;
 
-export function hero(profile, { text, rect, line, C, mono }) {
-  return `<defs><radialGradient id="hero-light"><stop stop-color="#47673B" stop-opacity=".24"/><stop offset="1" stop-color="#15271F" stop-opacity="0"/></radialGradient><clipPath id="name-clip"><rect class="motion-name" width="740" height="110" x="34" y="74"/></clipPath></defs>
-  <ellipse cx="950" cy="200" rx="340" ry="240" fill="url(#hero-light)"/>
-  ${text(38, 34, "AP / PYTHON BACKEND DEVELOPER", 11, C.muted, mono)}${text(1162, 34, profile.location.toUpperCase(), 11, C.muted, `${mono} text-anchor="end"`)}${line(38, 52, 1162, 52)}
-  <g clip-path="url(#name-clip)">${text(35, 151, profile.name + ".", 72, C.text, 'font-weight="700" letter-spacing="-3.5"')}</g>
-  <g class="motion-rise" style="--delay:.3s">${text(40, 203, profile.role, 25, C.lime)}${text(40, 242, profile.tagline, 19, C.muted)}</g>
-  <g class="motion-rise" style="--delay:.55s">${rect(40, 287, 108, 34, C.lime, 6)}${text(94, 309, "PYTHON", 12, C.bg, `${mono} text-anchor="middle"`)}${rect(158, 287, 108, 34, C.panel, 6)}${text(212, 309, "DJANGO", 12, C.lime, `${mono} text-anchor="middle"`)}${rect(276, 287, 112, 34, C.panel, 6)}${text(332, 309, "REST APIs", 12, C.lime, `${mono} text-anchor="middle"`)}</g>
-  <g transform="translate(788 87)">${rect(0, 0, 372, 253, "#102219", 14, `stroke="${C.border}"`)}<rect class="motion-border" x="0" y="0" width="372" height="253" rx="14"/><circle class="motion-pulse" cx="20" cy="23" r="4" fill="${C.lime}"/>${text(34, 27, "REQUEST PIPELINE", 11, C.muted, mono)}${line(0, 46, 372, 46)}
-  ${text(22, 81, "GET /api/projects", 16, C.lime, mono)}<rect class="motion-cursor" x="210" y="66" width="8" height="18" fill="${C.lime}"/>
-  ${rect(22, 104, 328, 50, C.lime, 8)}${text(186, 135, "DJANGO", 16, C.bg, 'font-weight="700" text-anchor="middle"')}
-  <path d="M186 155V178H100V196M186 178H272V196" stroke="#4E7043" fill="none"/><path class="motion-packet" d="M186 155V178H100V196M186 178H272V196"/>
-  ${rect(22, 197, 154, 34)}${rect(190, 197, 160, 34)}${text(99, 219, "POSTGRESQL", 11, C.text, `${mono} text-anchor="middle"`)}${text(270, 219, "CELERY + REDIS", 11, C.text, `${mono} text-anchor="middle"`)}</g>`;
-}
-
 export function projectPreview(repo, { rect, line, C }) {
   const bar = (x, y, w, h, color = C.lime, cls = "") =>
     rect(x, y, w, h, color, 3, cls ? `class="${cls}"` : "");
   const frame =
-    rect(24, 95, 552, 128, "#102219", 9, `stroke="${C.border}"`) +
+    rect(24, 95, 552, 128, "#FFFCF4", 9, `stroke="${C.border}"`) +
     bar(38, 109, 5, 5) +
     bar(48, 109, 5, 5, C.border) +
     bar(58, 109, 5, 5, C.border) +
@@ -63,8 +49,8 @@ export function projectPreview(repo, { rect, line, C }) {
       a +=
         rect(x, 136, 164, 74, C.panel, 5) +
         bar(x + 10, 147, 65, 4, C.soft) +
-        bar(x + 10, 160, 143, 16, "#304C35") +
-        bar(x + 10, 183, 105, 13, "#304C35");
+        bar(x + 10, 160, 143, 16, "#DCE5F4") +
+        bar(x + 10, 183, 105, 13, "#DCE5F4");
       b +=
         rect(x, 136, 164, 74, C.panel, 5) +
         bar(x + 10, 147, 65, 4, C.soft) +
@@ -73,22 +59,22 @@ export function projectPreview(repo, { rect, line, C }) {
           160,
           i === 1 ? 145 : 105,
           16,
-          i === 1 ? C.lime : "#304C35",
+          i === 1 ? C.lime : "#DCE5F4",
         ) +
-        bar(x + 10, 183, 130, 13, "#304C35");
+        bar(x + 10, 183, 130, 13, "#DCE5F4");
     }
   } else if (repo === "Ecommerce-with-payment") {
     for (let i = 0; i < 3; i++) {
       const x = 40 + i * 177;
       a +=
         rect(x, 135, 160, 75, C.panel, 5) +
-        rect(x + 10, 144, 48, 54, "#36533A", 5) +
+        rect(x + 10, 144, 48, 54, "#EDD07D", 5) +
         bar(x + 69, 147, 68, 5, C.soft) +
         bar(x + 69, 160, 43, 4, C.border) +
         bar(x + 69, 184, 70, 14, C.lime);
       b +=
         rect(x, 135, 160, 75, C.panel, 5) +
-        rect(x + 10, 144, 48, 54, "#36533A", 5) +
+        rect(x + 10, 144, 48, 54, "#EDD07D", 5) +
         bar(x + 69, 147, 68, 5, C.soft) +
         bar(x + 69, 160, 43, 4, C.border) +
         bar(x + 69, 184, 70, 14, i === 1 ? C.soft : C.lime);
@@ -140,7 +126,7 @@ export function projectPreview(repo, { rect, line, C }) {
 export function calendarArtwork(calendar, total, { text, rect, C, mono }) {
   const start = new Date(calendar[0].date + "T00:00:00Z");
   start.setUTCDate(start.getUTCDate() - start.getUTCDay());
-  const colors = ["#263D2C", "#426036", "#6A8D45", "#9DBD58", C.lime];
+  const colors = ["#E9DFC8", "#FFE58C", "#FFB34F", "#F57B4B", C.lime];
   let cells = "",
     months = "",
     lastMonth = -1;

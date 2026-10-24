@@ -28,17 +28,30 @@ text{font-family:Arial,'Segoe UI',sans-serif}.mono{font-family:Consolas,'Liberat
 @keyframes calendar-cell{from{opacity:0;transform:scale(.35)}to{opacity:1;transform:scale(1)}}
 @keyframes calendar-scan{from{transform:translateX(-100px)}to{transform:translateX(1130px)}}
 @media(prefers-reduced-motion:reduce){.motion-rise,.motion-number,.motion-border,.motion-bar,.motion-packet,.motion-cursor,.motion-orbit,.motion-float,.motion-pulse,.motion-name,.scene-a,.scene-b,.calendar-cell,.calendar-glow,.calendar-scan{animation:none!important;transform:none}.motion-name{width:740px}.scene-a{opacity:1}.scene-b,.calendar-scan{display:none}.motion-rise,.motion-number,.motion-bar,.calendar-cell{opacity:1}}
-</style><rect x="0" y="0" width="1200" height="325" rx="0" fill="#15271F" />
- <text x="32" y="37" font-size="12" fill="#C7F464" class="mono">PROFILE</text><path d="M32 57L1168 57" stroke="#405C3B" fill="none"/>
- <rect x="32" y="80" width="650" height="214" rx="12" fill="#1E3528" /><rect x="700" y="80" width="468" height="214" rx="12" fill="#1E3528" />
- <text x="54" y="116" font-size="25" fill="#F0F4E7" font-weight="700">About me</text>
- <text x="54" y="153" font-size="18" fill="#A9BE9A" >Python backend developer based in Kerala, India.</text>
- <text x="54" y="183" font-size="18" fill="#A9BE9A" >Building web applications with Django and REST APIs.</text>
- <text x="54" y="227" font-size="18" fill="#C7F464" >Junior Python Developer</text>
- <text x="54" y="256" font-size="16" fill="#A9BE9A" >Yafei AI Technologies · November 2024 — Present</text>
- <text x="722" y="116" font-size="25" fill="#F0F4E7" font-weight="700">Current focus</text>
- <text x="722" y="155" font-size="17" fill="#A9BE9A" >System design and distributed systems</text>
- <text x="722" y="185" font-size="17" fill="#A9BE9A" >Microservices and backend architecture</text>
- <text x="722" y="229" font-size="11" fill="#C7F464" class="mono">PYTHON / DJANGO / REST APIs</text>
- <text x="722" y="262" font-size="11" fill="#A9BE9A" class="mono">CELERY / REDIS / POSTGRESQL</text>
+
+text{font-family:'Trebuchet MS',Arial,sans-serif}
+text[font-weight="700"]{font-family:Impact,'Arial Black',Arial,sans-serif;letter-spacing:.2px}
+.mono{font-family:Consolas,'Liberation Mono',monospace;font-weight:700;letter-spacing:.6px}
+.motion-border{stroke:#1B1B25;stroke-opacity:.5;stroke-width:2}
+.motion-packet{stroke:#244BC4;stroke-width:4}
+.motion-rise{animation-name:comic-pop}
+.calendar-cell rect{stroke:#1B1B25;stroke-width:.8}
+.comic-spark{transform-box:fill-box;transform-origin:center;animation:comic-spark 3s steps(2,end) infinite}
+.comic-bubble{animation:comic-pop .7s cubic-bezier(.2,.8,.3,1.3) both;animation-delay:.3s}
+@keyframes comic-pop{from{opacity:0;transform:translateY(9px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes comic-spark{50%{opacity:.5;transform:scale(.9)}}
+@media(prefers-reduced-motion:reduce){.comic-spark,.comic-bubble{animation:none}}
+</style><rect x="0" y="0" width="1200" height="325" rx="0" fill="#FFF2D4" /><defs><pattern id="comic-dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".8" fill="#1B1B25" opacity=".11"/></pattern></defs><rect width="1200" height="325" fill="url(#comic-dots)"/><path d="M1105 1L1145 1M1120 9L1160 9M1135 17L1175 17" stroke="#1B1B25" stroke-width="2" opacity=".18"/>
+ <text x="32" y="37" font-size="12" fill="#BD263C" class="mono">PROFILE</text><path d="M32 57L1168 57" stroke="#1B1B25" stroke-width="2" fill="none"/>
+ <rect x="36" y="84" width="650" height="214" rx="0" fill="#1B1B25"/><rect x="32" y="80" width="650" height="214" rx="0" fill="#FFFCF4" stroke="#1B1B25" stroke-width="2.5" /><rect x="704" y="84" width="468" height="214" rx="0" fill="#1B1B25"/><rect x="700" y="80" width="468" height="214" rx="0" fill="#FFFCF4" stroke="#1B1B25" stroke-width="2.5" />
+ <text x="54" y="116" font-size="25" fill="#1B1B25" font-weight="700">About me</text>
+ <text x="54" y="153" font-size="18" fill="#47444A" >Python backend developer based in Kerala, India.</text>
+ <text x="54" y="183" font-size="18" fill="#47444A" >Building web applications with Django and REST APIs.</text>
+ <text x="54" y="227" font-size="18" fill="#BD263C" >Junior Python Developer</text>
+ <text x="54" y="256" font-size="16" fill="#47444A" >Yafei AI Technologies · November 2024 — Present</text>
+ <text x="722" y="116" font-size="25" fill="#1B1B25" font-weight="700">Current focus</text>
+ <text x="722" y="155" font-size="17" fill="#47444A" >System design and distributed systems</text>
+ <text x="722" y="185" font-size="17" fill="#47444A" >Microservices and backend architecture</text>
+ <text x="722" y="229" font-size="11" fill="#BD263C" class="mono">PYTHON / DJANGO / REST APIs</text>
+ <text x="722" y="262" font-size="11" fill="#47444A" class="mono">CELERY / REDIS / POSTGRESQL</text>
 </svg>
