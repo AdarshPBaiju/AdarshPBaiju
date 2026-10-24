@@ -1,5 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="350" viewBox="0 0 1200 350" role="img" aria-labelledby="title"><title id="title">Adarsh P Baiju — Python Backend Developer</title><style>text{font-family:Arial,Helvetica,sans-serif}.mono{font-family:monospace;letter-spacing:1px}.pulse{animation:pulse 3s ease-in-out infinite}.flow{stroke-dasharray:8 12;animation:flow 4s linear infinite}.reveal{animation:reveal 1.2s ease-out both}@keyframes pulse{50%{opacity:.35}}@keyframes flow{to{stroke-dashoffset:-80}}@keyframes reveal{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.pulse,.flow,.reveal{animation:none}}</style><rect x="0" y="0" width="1200" height="350" rx="0" fill="#15271F" />
- <text x="40" y="35" font-size="10" fill="#A9BE9A" class="mono">AP / PYTHON BACKEND DEVELOPER</text><text x="1160" y="35" font-size="10" fill="#A9BE9A" class="mono" text-anchor="end">KERALA, INDIA</text><path d="M40 53L1160 53" stroke="#405C3B" fill="none"/>
- <g class="reveal"><text x="40" y="133" font-size="65" fill="#F0F4E7" font-weight="700" letter-spacing="-3">Adarsh P Baiju.</text><text x="44" y="183" font-size="23" fill="#C7F464" >Python Backend Developer</text><text x="44" y="222" font-size="18" fill="#A9BE9A" >Django, REST APIs and PostgreSQL.</text></g>
- <rect x="44" y="263" width="90" height="27" rx="5" fill="#C7F464" /><text x="89" y="281" font-size="10" fill="#15271F" class="mono" text-anchor="middle">PYTHON</text><rect x="144" y="263" width="90" height="27" rx="5" fill="#1E3528" /><text x="189" y="281" font-size="10" fill="#C7F464" class="mono" text-anchor="middle">DJANGO</text><rect x="244" y="263" width="100" height="27" rx="5" fill="#1E3528" /><text x="294" y="281" font-size="10" fill="#C7F464" class="mono" text-anchor="middle">REST APIs</text>
- <g transform="translate(800 85)"><rect x="0" y="0" width="354" height="223" rx="12" fill="#102219" stroke="#405C3B"/><circle class="pulse" cx="20" cy="22" r="4" fill="#C7F464"/><text x="34" y="25" font-size="9" fill="#A9BE9A" class="mono">SYSTEM OVERVIEW</text><path d="M0 42L354 42" stroke="#405C3B" fill="none"/><text x="22" y="75" font-size="15" fill="#C7F464" class="mono">GET /api/projects</text><rect x="22" y="95" width="310" height="44" rx="7" fill="#C7F464" /><text x="177" y="122" font-size="14" fill="#15271F" font-weight="700" text-anchor="middle">DJANGO</text><path class="flow" d="M177 140V160H96V172M177 160H263V172" stroke="#C7F464" fill="none"/><rect x="22" y="172" width="147" height="30" rx="12" fill="#1E3528" /><rect x="183" y="172" width="149" height="30" rx="12" fill="#1E3528" /><text x="95" y="191" font-size="9" fill="#F0F4E7" class="mono" text-anchor="middle">POSTGRESQL</text><text x="257" y="191" font-size="9" fill="#F0F4E7" class="mono" text-anchor="middle">CELERY + REDIS</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="title"><title id="title">Adarsh P Baiju — Python Backend Developer</title><style>
+text{font-family:Arial,'Segoe UI',sans-serif}.mono{font-family:Consolas,'Liberation Mono',monospace;letter-spacing:.8px}
+.motion-rise{animation:motion-rise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--delay,0s)}
+.motion-number{animation:motion-rise 1s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--delay,0s)}
+.motion-border{stroke-dasharray:70 900;animation:motion-border 9s linear infinite;fill:none;stroke:#C7F464;stroke-opacity:.38}
+.motion-bar{transform-box:fill-box;transform-origin:left;animation:motion-bar 1.6s cubic-bezier(.2,.7,.2,1) both}
+.motion-packet{stroke-dasharray:5 70;animation:motion-packet 3s linear infinite;fill:none;stroke:#C7F464;stroke-width:3}
+.motion-cursor{animation:motion-cursor 1s steps(1) infinite}
+.motion-orbit{transform-box:fill-box;transform-origin:center;animation:motion-orbit 8s linear infinite}
+.motion-float{animation:motion-float 5s ease-in-out infinite;animation-delay:var(--delay,0s)}
+.motion-pulse{animation:motion-pulse 4s ease-in-out infinite;animation-delay:var(--delay,0s)}
+.motion-name{animation:motion-name 1.5s cubic-bezier(.2,.7,.2,1) both}
+.scene-a{animation:scene-a 9s ease-in-out infinite}.scene-b{opacity:0;animation:scene-b 9s ease-in-out infinite}
+.calendar-cell{transform-box:fill-box;transform-origin:center;animation:calendar-cell .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--delay,0s)}
+.calendar-glow{animation:motion-pulse 5s ease-in-out infinite;animation-delay:var(--delay,0s)}
+.calendar-scan{animation:calendar-scan 12s linear infinite}
+@keyframes motion-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes motion-border{to{stroke-dashoffset:-970}}
+@keyframes motion-bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes motion-packet{to{stroke-dashoffset:-150}}
+@keyframes motion-cursor{50%{opacity:0}}
+@keyframes motion-orbit{to{transform:rotate(360deg)}}
+@keyframes motion-float{50%{transform:translateY(-3px)}}
+@keyframes motion-pulse{50%{opacity:.6}}
+@keyframes motion-name{from{width:0}to{width:740px}}
+@keyframes scene-a{0%,40%,100%{opacity:1}48%,90%{opacity:0}}
+@keyframes scene-b{0%,40%,100%{opacity:0}48%,90%{opacity:1}}
+@keyframes calendar-cell{from{opacity:0;transform:scale(.35)}to{opacity:1;transform:scale(1)}}
+@keyframes calendar-scan{from{transform:translateX(-100px)}to{transform:translateX(1130px)}}
+@media(prefers-reduced-motion:reduce){.motion-rise,.motion-number,.motion-border,.motion-bar,.motion-packet,.motion-cursor,.motion-orbit,.motion-float,.motion-pulse,.motion-name,.scene-a,.scene-b,.calendar-cell,.calendar-glow,.calendar-scan{animation:none!important;transform:none}.motion-name{width:740px}.scene-a{opacity:1}.scene-b,.calendar-scan{display:none}.motion-rise,.motion-number,.motion-bar,.calendar-cell{opacity:1}}
+</style><rect x="0" y="0" width="1200" height="380" rx="0" fill="#15271F" /><defs><radialGradient id="hero-light"><stop stop-color="#47673B" stop-opacity=".24"/><stop offset="1" stop-color="#15271F" stop-opacity="0"/></radialGradient><clipPath id="name-clip"><rect class="motion-name" width="740" height="110" x="34" y="74"/></clipPath></defs>
+  <ellipse cx="950" cy="200" rx="340" ry="240" fill="url(#hero-light)"/>
+  <text x="38" y="34" font-size="11" fill="#A9BE9A" class="mono">AP / PYTHON BACKEND DEVELOPER</text><text x="1162" y="34" font-size="11" fill="#A9BE9A" class="mono" text-anchor="end">KERALA, INDIA</text><path d="M38 52L1162 52" stroke="#405C3B" fill="none"/>
+  <g clip-path="url(#name-clip)"><text x="35" y="151" font-size="72" fill="#F0F4E7" font-weight="700" letter-spacing="-3.5">Adarsh P Baiju.</text></g>
+  <g class="motion-rise" style="--delay:.3s"><text x="40" y="203" font-size="25" fill="#C7F464" >Python Backend Developer</text><text x="40" y="242" font-size="19" fill="#A9BE9A" >Django, REST APIs and PostgreSQL.</text></g>
+  <g class="motion-rise" style="--delay:.55s"><rect x="40" y="287" width="108" height="34" rx="6" fill="#C7F464" /><text x="94" y="309" font-size="12" fill="#15271F" class="mono" text-anchor="middle">PYTHON</text><rect x="158" y="287" width="108" height="34" rx="6" fill="#1E3528" /><text x="212" y="309" font-size="12" fill="#C7F464" class="mono" text-anchor="middle">DJANGO</text><rect x="276" y="287" width="112" height="34" rx="6" fill="#1E3528" /><text x="332" y="309" font-size="12" fill="#C7F464" class="mono" text-anchor="middle">REST APIs</text></g>
+  <g transform="translate(788 87)"><rect x="0" y="0" width="372" height="253" rx="14" fill="#102219" stroke="#405C3B"/><rect class="motion-border" x="0" y="0" width="372" height="253" rx="14"/><circle class="motion-pulse" cx="20" cy="23" r="4" fill="#C7F464"/><text x="34" y="27" font-size="11" fill="#A9BE9A" class="mono">REQUEST PIPELINE</text><path d="M0 46L372 46" stroke="#405C3B" fill="none"/>
+  <text x="22" y="81" font-size="16" fill="#C7F464" class="mono">GET /api/projects</text><rect class="motion-cursor" x="210" y="66" width="8" height="18" fill="#C7F464"/>
+  <rect x="22" y="104" width="328" height="50" rx="8" fill="#C7F464" /><text x="186" y="135" font-size="16" fill="#15271F" font-weight="700" text-anchor="middle">DJANGO</text>
+  <path d="M186 155V178H100V196M186 178H272V196" stroke="#4E7043" fill="none"/><path class="motion-packet" d="M186 155V178H100V196M186 178H272V196"/>
+  <rect x="22" y="197" width="154" height="34" rx="12" fill="#1E3528" /><rect x="190" y="197" width="160" height="34" rx="12" fill="#1E3528" /><text x="99" y="219" font-size="11" fill="#F0F4E7" class="mono" text-anchor="middle">POSTGRESQL</text><text x="270" y="219" font-size="11" fill="#F0F4E7" class="mono" text-anchor="middle">CELERY + REDIS</text></g></svg>

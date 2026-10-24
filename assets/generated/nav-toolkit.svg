@@ -1,1 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="58" viewBox="0 0 240 58" role="img" aria-labelledby="title"><title id="title">TOOLKIT</title><style>text{font-family:Arial,Helvetica,sans-serif}.mono{font-family:monospace;letter-spacing:1px}.pulse{animation:pulse 3s ease-in-out infinite}.flow{stroke-dasharray:8 12;animation:flow 4s linear infinite}.reveal{animation:reveal 1.2s ease-out both}@keyframes pulse{50%{opacity:.35}}@keyframes flow{to{stroke-dashoffset:-80}}@keyframes reveal{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.pulse,.flow,.reveal{animation:none}}</style><rect x="0" y="0" width="240" height="58" rx="0" fill="#15271F" /><text x="120" y="36" font-size="13" fill="#C7F464" class="mono" text-anchor="middle">TOOLKIT</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="58" viewBox="0 0 240 58" role="img" aria-labelledby="title"><title id="title">TOOLKIT</title><style>
+text{font-family:Arial,'Segoe UI',sans-serif}.mono{font-family:Consolas,'Liberation Mono',monospace;letter-spacing:.8px}
+.motion-rise{animation:motion-rise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--delay,0s)}
+.motion-number{animation:motion-rise 1s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--delay,0s)}
+.motion-border{stroke-dasharray:70 900;animation:motion-border 9s linear infinite;fill:none;stroke:#C7F464;stroke-opacity:.38}
+.motion-bar{transform-box:fill-box;transform-origin:left;animation:motion-bar 1.6s cubic-bezier(.2,.7,.2,1) both}
+.motion-packet{stroke-dasharray:5 70;animation:motion-packet 3s linear infinite;fill:none;stroke:#C7F464;stroke-width:3}
+.motion-cursor{animation:motion-cursor 1s steps(1) infinite}
+.motion-orbit{transform-box:fill-box;transform-origin:center;animation:motion-orbit 8s linear infinite}
+.motion-float{animation:motion-float 5s ease-in-out infinite;animation-delay:var(--delay,0s)}
+.motion-pulse{animation:motion-pulse 4s ease-in-out infinite;animation-delay:var(--delay,0s)}
+.motion-name{animation:motion-name 1.5s cubic-bezier(.2,.7,.2,1) both}
+.scene-a{animation:scene-a 9s ease-in-out infinite}.scene-b{opacity:0;animation:scene-b 9s ease-in-out infinite}
+.calendar-cell{transform-box:fill-box;transform-origin:center;animation:calendar-cell .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--delay,0s)}
+.calendar-glow{animation:motion-pulse 5s ease-in-out infinite;animation-delay:var(--delay,0s)}
+.calendar-scan{animation:calendar-scan 12s linear infinite}
+@keyframes motion-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes motion-border{to{stroke-dashoffset:-970}}
+@keyframes motion-bar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes motion-packet{to{stroke-dashoffset:-150}}
+@keyframes motion-cursor{50%{opacity:0}}
+@keyframes motion-orbit{to{transform:rotate(360deg)}}
+@keyframes motion-float{50%{transform:translateY(-3px)}}
+@keyframes motion-pulse{50%{opacity:.6}}
+@keyframes motion-name{from{width:0}to{width:740px}}
+@keyframes scene-a{0%,40%,100%{opacity:1}48%,90%{opacity:0}}
+@keyframes scene-b{0%,40%,100%{opacity:0}48%,90%{opacity:1}}
+@keyframes calendar-cell{from{opacity:0;transform:scale(.35)}to{opacity:1;transform:scale(1)}}
+@keyframes calendar-scan{from{transform:translateX(-100px)}to{transform:translateX(1130px)}}
+@media(prefers-reduced-motion:reduce){.motion-rise,.motion-number,.motion-border,.motion-bar,.motion-packet,.motion-cursor,.motion-orbit,.motion-float,.motion-pulse,.motion-name,.scene-a,.scene-b,.calendar-cell,.calendar-glow,.calendar-scan{animation:none!important;transform:none}.motion-name{width:740px}.scene-a{opacity:1}.scene-b,.calendar-scan{display:none}.motion-rise,.motion-number,.motion-bar,.calendar-cell{opacity:1}}
+</style><rect x="0" y="0" width="240" height="58" rx="0" fill="#15271F" /><text x="120" y="36" font-size="13" fill="#C7F464" class="mono" text-anchor="middle">TOOLKIT</text></svg>

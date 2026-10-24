@@ -1,5 +1,7 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { xml } from "./lib.mjs";
+import { motionCss, hero, projectPreview, calendarArtwork } from "./motion.mjs";
 const root = new URL("../", import.meta.url);
 const load = async (path) =>
   JSON.parse(await readFile(new URL(path, root), "utf8"));
@@ -16,13 +18,13 @@ const C = {
 };
 const number = (value) => Number(value || 0).toLocaleString("en-US");
 const text = (x, y, value, size = 16, color = C.text, extra = "") =>
-  `<text x="${x}" y="${y}" font-size="${size}" fill="${color}" ${extra}>${xml(value)}</text>`;
+  `<text x="${x}" y="${y}" font-size="${Math.max(11, size)}" fill="${color}" ${extra}>${xml(value)}</text>`;
 const rect = (x, y, w, h, fill = C.panel, rx = 12, extra = "") =>
   `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${fill}" ${extra}/>`;
 const line = (x, y, x2, y2) =>
   `<path d="M${x} ${y}L${x2} ${y2}" stroke="${C.border}" fill="none"/>`;
 function svg(w, h, title, body) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title"><title id="title">${xml(title)}</title><style>text{font-family:Arial,Helvetica,sans-serif}.mono{font-family:monospace;letter-spacing:1px}.pulse{animation:pulse 3s ease-in-out infinite}.flow{stroke-dasharray:8 12;animation:flow 4s linear infinite}.reveal{animation:reveal 1.2s ease-out both}@keyframes pulse{50%{opacity:.35}}@keyframes flow{to{stroke-dashoffset:-80}}@keyframes reveal{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.pulse,.flow,.reveal{animation:none}}</style>${rect(0, 0, w, h, C.bg, 0)}${body}</svg>\n`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title"><title id="title">${xml(title)}</title><style>${motionCss}</style>${rect(0, 0, w, h, C.bg, 0)}${body}</svg>\n`;
 }
 async function save(name, content) {
   await mkdir(new URL("assets/generated/", root), { recursive: true });
@@ -33,13 +35,9 @@ await save(
   "hero",
   svg(
     1200,
-    350,
-    `${profile.name} — ${profile.role}`,
-    `
- ${text(40, 35, "AP / PYTHON BACKEND DEVELOPER", 10, C.muted, mono)}${text(1160, 35, profile.location.toUpperCase(), 10, C.muted, `${mono} text-anchor="end"`)}${line(40, 53, 1160, 53)}
- <g class="reveal">${text(40, 133, profile.name + ".", 65, C.text, 'font-weight="700" letter-spacing="-3"')}${text(44, 183, profile.role, 23, C.lime)}${text(44, 222, profile.tagline, 18, C.muted)}</g>
- ${rect(44, 263, 90, 27, C.lime, 5)}${text(89, 281, "PYTHON", 10, C.bg, `${mono} text-anchor="middle"`)}${rect(144, 263, 90, 27, C.panel, 5)}${text(189, 281, "DJANGO", 10, C.lime, `${mono} text-anchor="middle"`)}${rect(244, 263, 100, 27, C.panel, 5)}${text(294, 281, "REST APIs", 10, C.lime, `${mono} text-anchor="middle"`)}
- <g transform="translate(800 85)">${rect(0, 0, 354, 223, "#102219", 12, `stroke="${C.border}"`)}<circle class="pulse" cx="20" cy="22" r="4" fill="${C.lime}"/>${text(34, 25, "SYSTEM OVERVIEW", 9, C.muted, mono)}${line(0, 42, 354, 42)}${text(22, 75, "GET /api/projects", 15, C.lime, mono)}${rect(22, 95, 310, 44, C.lime, 7)}${text(177, 122, "DJANGO", 14, C.bg, `font-weight="700" text-anchor="middle"`)}<path class="flow" d="M177 140V160H96V172M177 160H263V172" stroke="${C.lime}" fill="none"/>${rect(22, 172, 147, 30)}${rect(183, 172, 149, 30)}${text(95, 191, "POSTGRESQL", 9, C.text, `${mono} text-anchor="middle"`)}${text(257, 191, "CELERY + REDIS", 9, C.text, `${mono} text-anchor="middle"`)}</g>`,
+    380,
+    profile.name + " — " + profile.role,
+    hero(profile, { text, rect, line, C, mono }),
   ),
 );
 const date = data.fetchedAt.slice(0, 10);
@@ -53,20 +51,58 @@ await save(
   "dashboard",
   svg(
     1200,
-    232,
+    260,
     "Public GitHub dashboard",
-    `${text(30, 32, "GITHUB / PUBLIC ACTIVITY", 11, C.lime, mono)}${text(1170, 32, "UPDATED " + date + " UTC", 9, C.muted, `${mono} text-anchor="end"`)}${metrics
-      .map(([label, value], i) => {
-        const x = 30 + i * 290;
-        return (
-          rect(x, 58, 270, 125) +
-          text(x + 20, 90, label, 9, C.muted, mono) +
-          text(x + 20, 149, number(value), 43, C.text, 'font-weight="700"')
-        );
-      })
-      .join(
-        "",
-      )}${text(30, 211, "Public GitHub statistics · refreshed automatically", 10, C.muted)}`,
+    text(30, 34, "GITHUB / PUBLIC ACTIVITY", 13, C.lime, mono) +
+      text(
+        1170,
+        34,
+        "UPDATED " + date + " UTC",
+        11,
+        C.muted,
+        mono + ' text-anchor="end"',
+      ) +
+      metrics
+        .map(([label, value], i) => {
+          const x = 30 + i * 290;
+          return (
+            '<g class="motion-rise" style="--delay:' +
+            i * 0.12 +
+            's">' +
+            rect(x, 61, 270, 146, C.panel, 12, 'stroke="' + C.border + '"') +
+            '<rect class="motion-border" x="' +
+            x +
+            '" y="61" width="270" height="146" rx="12"/>' +
+            text(x + 19, 92, label, 11, C.muted, mono) +
+            '<g class="motion-number" style="--delay:' +
+            (i * 0.12 + 0.2) +
+            's">' +
+            text(
+              x + 19,
+              157,
+              number(value),
+              52,
+              C.text,
+              'font-weight="700" letter-spacing="-2"',
+            ) +
+            "</g>" +
+            text(
+              x + 19,
+              189,
+              [
+                "Owned public repositories",
+                "Across public repositories",
+                "GitHub followers",
+                "Public contribution calendar",
+              ][i],
+              12,
+              C.muted,
+            ) +
+            "</g>"
+          );
+        })
+        .join("") +
+      text(30, 238, "Automatic refresh / GitHub Actions", 11, C.muted, mono),
   ),
 );
 const languages = data.languages.slice(0, 6),
@@ -92,6 +128,7 @@ await save(
             5,
             C.lime,
             2,
+            'class="motion-bar"',
           )
         );
       })
@@ -125,14 +162,65 @@ await save(
 for (let i = 0; i < profile.projects.length; i++) {
   const project = profile.projects[i],
     repo = data.repositories.find((repo) => repo.name === project.repo);
-  if (!repo) throw new Error(`Featured repository not found: ${project.repo}`);
+  if (!repo) throw new Error("Featured repository not found: " + project.repo);
   await save(
-    `project-${project.repo.toLowerCase()}`,
+    "project-" + project.repo.toLowerCase(),
     svg(
       600,
-      234,
+      374,
       project.title,
-      `${text(26, 31, String(i + 1).padStart(2, "0") + " / SELECTED WORK", 9, C.muted, mono)}${text(571, 35, "↗", 25, C.lime, 'text-anchor="end"')}${text(26, 80, project.title, 28, C.text, 'font-weight="700" letter-spacing="-.8"')}${text(26, 113, project.description, 15, C.muted)}${text(26, 136, project.detail, 15, C.muted)}${text(26, 174, project.tags, 9, C.lime, mono)}${line(26, 193, 574, 193)}${text(26, 216, `${repo.language || "SOURCE"} · ${repo.stars} ${repo.stars === 1 ? "STAR" : "STARS"}`, 9, C.muted, mono)}${text(574, 216, "UPDATED " + repo.updatedAt.slice(0, 10), 9, C.muted, `${mono} text-anchor="end"`)}`,
+      text(
+        24,
+        29,
+        String(i + 1).padStart(2, "0") + " / SELECTED WORK",
+        11,
+        C.muted,
+        mono,
+      ) +
+        text(576, 33, "↗", 25, C.lime, 'text-anchor="end"') +
+        '<g class="motion-rise">' +
+        text(
+          24,
+          72,
+          project.title,
+          30,
+          C.text,
+          'font-weight="700" letter-spacing="-.8"',
+        ) +
+        "</g>" +
+        projectPreview(project.repo, { rect, line, C }) +
+        text(
+          563,
+          117,
+          "INTERFACE STUDY",
+          9,
+          C.muted,
+          mono + ' text-anchor="end"',
+        ) +
+        text(24, 255, project.description, 15, C.muted) +
+        text(24, 279, project.detail, 15, C.muted) +
+        text(24, 313, project.tags, 11, C.lime, mono) +
+        line(24, 333, 576, 333) +
+        text(
+          24,
+          358,
+          (repo.language || "SOURCE") +
+            " · " +
+            repo.stars +
+            " " +
+            (repo.stars === 1 ? "STAR" : "STARS"),
+          11,
+          C.muted,
+          mono,
+        ) +
+        text(
+          576,
+          358,
+          "UPDATED " + repo.updatedAt.slice(0, 10),
+          11,
+          C.muted,
+          mono + ' text-anchor="end"',
+        ),
     ),
   );
 }
@@ -179,11 +267,11 @@ const groups = [
   ],
 ];
 for (const [slug, title, tools] of groups) {
-  let body = text(24, 31, title, 11, C.lime, mono);
+  let body = text(24, 32, title, 14, C.lime, mono);
   for (let i = 0; i < tools.length; i++) {
     const [name, file] = tools[i],
       x = 24 + (i % 3) * 183,
-      y = 65 + Math.floor(i / 3) * 67;
+      y = 64 + Math.floor(i / 3) * 76;
     let icon = "";
     try {
       const source = await readFile(
@@ -198,11 +286,27 @@ for (const [slug, title, tools] of groups) {
         '<path d="M8 4L2 12L8 20M16 4L22 12L16 20" fill="none" stroke="currentColor" stroke-width="2"/>';
     }
     body +=
-      rect(x, y, 169, 52) +
-      `<g color="${C.lime}" fill="${C.lime}" transform="translate(${x + 13} ${y + 14})">${icon}</g>` +
-      text(x + 48, y + 31, name, 12, C.text);
+      '<g class="motion-rise" style="--delay:' +
+      i * 0.12 +
+      's">' +
+      rect(x, y, 169, 62, C.panel, 9) +
+      '<g transform="translate(' +
+      (x + 13) +
+      " " +
+      (y + 19) +
+      ')"><g class="motion-float" style="--delay:' +
+      i * 0.5 +
+      's" color="' +
+      C.lime +
+      '" fill="' +
+      C.lime +
+      '">' +
+      icon +
+      "</g></g>" +
+      text(x + 47, y + 37, name, 14, C.text) +
+      "</g>";
   }
-  await save(`toolkit-${slug}`, svg(600, 213, title, body));
+  await save(`toolkit-${slug}`, svg(600, 235, title, body));
 }
 await save(
   "contact",
@@ -214,74 +318,20 @@ await save(
   ),
 );
 
-if (data.contributions?.days?.length) {
-  const calendar = data.contributions.days;
-  const start = new Date(calendar[0].date + "T00:00:00Z");
-  start.setUTCDate(start.getUTCDate() - start.getUTCDay());
-  const colors = ["#263D2C", "#426036", "#6A8D45", "#9DBD58", C.lime];
-  const cells = calendar
-    .map((day) => {
-      const d = new Date(day.date + "T00:00:00Z");
-      const week = Math.floor((d - start) / 86400000 / 7),
-        row = d.getUTCDay();
-      return (
-        "<g><title>" +
-        xml(day.date) +
-        ": " +
-        day.count +
-        ' contributions</title><rect class="calendar-cell ' +
-        (day.count ? "calendar-active" : "") +
-        '" style="animation-delay:' +
-        week * 0.018 +
-        's" x="' +
-        (55 + week * 21) +
-        '" y="' +
-        (83 + row * 21) +
-        '" width="17" height="17" rx="4" fill="' +
-        colors[Math.min(4, day.level)] +
-        '"/></g>'
-      );
-    })
-    .join("");
-  const styles =
-    "<style>.calendar-cell{transform-box:fill-box;transform-origin:center;animation:calendar-reveal .65s ease-out both}.calendar-active{animation:calendar-reveal .65s ease-out both,calendar-glow 5s ease-in-out infinite}.calendar-scan{animation:calendar-scan 9s linear infinite}@keyframes calendar-reveal{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}@keyframes calendar-glow{50%{filter:brightness(1.3)}}@keyframes calendar-scan{from{transform:translateX(-90px)}to{transform:translateX(1140px)}}@media(prefers-reduced-motion:reduce){.calendar-cell,.calendar-active,.calendar-scan{animation:none}.calendar-scan{display:none}}</style>";
+if (data.contributions?.days?.length)
   await save(
     "contributions",
     svg(
       1200,
-      290,
-      "Public GitHub contribution calendar",
-      styles +
-        text(32, 35, "CONTRIBUTIONS / LAST 12 MONTHS", 12, C.lime, mono) +
-        text(
-          1168,
-          36,
-          number(data.contributions.total) + " contributions",
-          18,
-          C.text,
-          'text-anchor="end"',
-        ) +
-        cells +
-        '<svg x="55" y="80" width="1110" height="151" viewBox="0 0 1110 151"><rect class="calendar-scan" width="60" height="151" fill="#C7F464" opacity=".045"/></svg>' +
-        text(
-          32,
-          263,
-          calendar[0].date + " — " + calendar.at(-1).date,
-          10,
-          C.muted,
-          mono,
-        ) +
-        text(
-          1168,
-          263,
-          "SOURCE / GITHUB PUBLIC PROFILE",
-          9,
-          C.muted,
-          mono + ' text-anchor="end"',
-        ),
+      310,
+      "Animated public GitHub contribution calendar",
+      calendarArtwork(
+        data.contributions.days,
+        number(data.contributions.total),
+        { text, rect, C, mono },
+      ),
     ),
   );
-}
 await save(
   "profile",
   svg(
@@ -336,12 +386,12 @@ await save(
   "toolkit",
   svg(
     1200,
-    458,
+    500,
     "Languages, backend, frontend, data and delivery toolkit",
-    (await nested("toolkit-languages", 0, 0, 592, 210)) +
-      (await nested("toolkit-backend", 608, 0, 592, 210)) +
-      (await nested("toolkit-frontend", 0, 225, 592, 210)) +
-      (await nested("toolkit-tooling", 608, 225, 592, 210)),
+    (await nested("toolkit-languages", 0, 0, 592, 232)) +
+      (await nested("toolkit-backend", 608, 0, 592, 232)) +
+      (await nested("toolkit-frontend", 0, 248, 592, 232)) +
+      (await nested("toolkit-tooling", 608, 248, 592, 232)),
   ),
 );
 await save(
@@ -401,4 +451,26 @@ for (const [slug, label] of [
     ),
   );
 }
+// Content-derived versions let GitHub request updated artwork after a stats refresh.
+const readmeUrl = new URL("README.md", root);
+let readme = await readFile(readmeUrl, "utf8");
+const imageSources = [
+  ...new Set(
+    [
+      ...readme.matchAll(
+        /src="(assets\/generated\/[^"?]+\.svg)(?:\?[^\"]*)?"/g,
+      ),
+    ].map((match) => match[1]),
+  ),
+];
+for (const source of imageSources) {
+  const content = await readFile(new URL(source, root));
+  const hash = createHash("sha256").update(content).digest("hex").slice(0, 12);
+  const escaped = source.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  readme = readme.replace(
+    new RegExp(`src="${escaped}(?:\\?[^\\"]*)?"`, "g"),
+    `src="${source}?v=${hash}"`,
+  );
+}
+await writeFile(readmeUrl, readme);
 console.log("Built the complete custom profile asset set.");

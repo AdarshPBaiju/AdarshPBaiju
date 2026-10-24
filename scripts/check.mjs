@@ -6,7 +6,10 @@ for (const match of readme.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   const path = match[1];
   if (/^[a-z]+:/i.test(path)) continue;
   assert(!path.includes(".."), `Unexpected local traversal: ${path}`);
-  await access(new URL(path, root));
+  const local = new URL(path, root);
+  local.search = "";
+  local.hash = "";
+  await access(local);
 }
 const names = await readdir(new URL("assets/generated/", root));
 for (const name of names) {
