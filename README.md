@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>My contribution companion</h3>
-  <a href="https://github.com/PramudithaN/git-tulkun"><img src="https://raw.githubusercontent.com/AdarshPBaiju/AdarshPBaiju/tulkun-output/tulkun/tulkun.gif" width="640" alt="Animated Tulkun whale generated from AdarshPBaiju’s GitHub contributions and programming language colors" /></a>
+  <img src="https://raw.githubusercontent.com/AdarshPBaiju/AdarshPBaiju/tulkun-output/tulkun/tulkun.gif" width="640" alt="Animated Tulkun whale generated from AdarshPBaiju’s GitHub contributions and programming language colors" />
   <p><sub>Grows with my contributions this year · Colors from my programming languages · Updated daily</sub></p>
 </div>
 
