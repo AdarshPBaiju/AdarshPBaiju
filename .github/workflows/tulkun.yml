@@ -1,0 +1,34 @@
+name: Update Tulkun
+
+on:
+  schedule:
+    - cron: "43 2 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/tulkun.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tulkun-output
+  cancel-in-progress: false
+
+jobs:
+  tulkun:
+    if: github.repository == 'AdarshPBaiju/AdarshPBaiju'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Generate and publish contribution whale
+        uses: PramudithaN/git-tulkun@07458fd6c4981a6a39219086e58b0ef06f42d010 # v1
+        with:
+          login: AdarshPBaiju
+          view: side
+          window: annual
+          canon: "false"
+          output-dir: tulkun
+          branch: tulkun-output
+          token: ${{ github.token }}
